@@ -20,7 +20,7 @@ const Header = () => {
           Summer Sale! Up to 50% off selected items. Limited time only
         </h3>
       </div>
-      <div className="md:flex justify-between hidden items-center py-2 md:px-24 px-6">
+      <div className="md:flex justify-between hidden items-center md:py-4  md:px-24 px-6">
         <NavLink to="/">
           <img src={logo} alt="logo" />
         </NavLink>
@@ -30,6 +30,7 @@ const Header = () => {
           <NavLink to="/sign">Sign In</NavLink>
         </ul>
       </div>
+      <hr className="md:block hidden mx-24" />
       <div className="md:hidden px-6 py-4 flex justify-between">
         <NavLink to="/">
           <img src={logo} alt="logo" />
@@ -43,6 +44,7 @@ const Header = () => {
         </div>
 
       </div>
+      
       <form action="" className="md:hidden block">
           <div className="">
             <input
@@ -91,7 +93,7 @@ const Header = () => {
           </div>
         </ul>
       </div>
-      <hr className="md:mx-8 hidden" />
+     
       <div className="flex justify-between gap-80 py-4 md:px-24 px-6 items-center">
         <ul className="md:flex md:gap-6 hidden">
           <NavLink to="/help">About</NavLink>
