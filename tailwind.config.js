@@ -14,7 +14,7 @@ export default {
         "whites": "FAFAFA"
       },
       backgroundImage: {
-        "shirt": "url('./src/assets/bgshirt.png')"
+        "shirt": "url('/bgshirt.png')"
       }
     },
   },
