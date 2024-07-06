@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="bg-shirt md:bg-cover md:h-screen bg-cover bg-no-repeat">
       <div className="md:pt-9">
-        <h1 className="text-white md:font-[500px] md:text-5xl text:3xl text-center md:pt-60 pt-8">
+        <h1 className="text-white md:font-[500px] md:text-5xl text:3xl text-center md:pt-60 pt-24">
           Unleash Your Inner Style Icon
         </h1>
         <p className="text-white font-[10px] md:text-xl text-[10px] pt-2 text-center md:pt-7">
