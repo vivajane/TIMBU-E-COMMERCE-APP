@@ -25,8 +25,8 @@ const Collections = [
 
 const Collection = () => {
   return (
-    <div className='md:px-24 px-6'>
-        <h1 className='text-center md:font-extrabold md:text-4xl'>Discover Our Exclusive Collection</h1>
+    <div className='md:px-24 px-6 '>
+        <h1 className='text-center font-extrabold md:text-4xl '>Discover Our Exclusive Collection</h1>
         <p className='text-center py-2 md:text-base  text-sm'>Shop the latest trends and find your perfect match</p>
         <ul className='flex justify-center md:gap-10 gap-4 py-6  '>
             {

@@ -5,16 +5,17 @@ import collections from '../assets/collections';
 
 const Item = (props) => {
   return (
-    <div>
-        <img src={props.image} alt="" />
-        <p> {props.name}</p>
-        <p>NGN{props.price}</p>
-        <div className='flex gap-1'>
+    <div className='text-center'>
+        <img src={props.image} alt="img" className='pt-4' />
+        <p className='pt-3 font-bold'> {props.name}</p>
+        <p className='font-bold'>NGN{props.price}</p>
+        <div className='flex gap-1 md:ml-11 ml-24 pb-4'>
             <img src={rate} alt="rate" />
             <img src={rate} alt="rate" />
             <img src={rate} alt="rate" />
             <img src={rate} alt="rate" />
             <img src={ratee} alt="ratee" />
+            <p>(4.7)</p>
         </div>
 
 

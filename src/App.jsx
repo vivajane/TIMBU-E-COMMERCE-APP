@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './Pages/Header';
 import Home from './Pages/Home';
 import Category from './conponent/Category';
+import Footer from './Pages/Footer';
 
 function App() {
   return <div className=' w-[100%] bg-whites'>
@@ -18,6 +19,7 @@ function App() {
       <Route path='/sweatshirts' element={<Category/>}></Route>
       
     </Routes>
+    <Footer/>
     </BrowserRouter>
     
 
