@@ -46,10 +46,10 @@ const Footer = () => {
       <NavLink to="/">
         <img src={logo} alt="logo" />
       </NavLink>
-      <div className="flex justify-between">
-        <div className="flex items-center gap-8">
+      <div className="md:flex justify-between">
+        <div className="md:flex items-center py-4 gap-8">
           {footers.map((footer) => (
-            <li key={footer.id} className="list-none hover:font-bold">
+            <li key={footer.id} className="list-none hover:font-bold py-3">
               <NavLink
                 to={footer.link}
                 className={(isActive) => (isActive ? "text-black" : null)}
@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
         <div>
           <h1>Downlaod the App</h1>
-          <div>
+          <div className="py-3">
             <img src={logos} alt="logos" />
           </div>
         </div>
@@ -70,14 +70,14 @@ const Footer = () => {
       <div>
         <hr className="border-gray-950 mt-16" />
       </div>
-      <div className="flex justify-between py-6">
-        <ul className="flex gap-4">
+      <div className="md:flex items-center justify-between md:py-0 py-6">
+        <ul className="flex gap-4 justify-center">
             <li><FaFacebook/></li>
             <li><FaInstagram/></li>
             <li><FaTwitterSquare/></li>
             <li><FaLinkedin/></li>
         </ul>
-        <ul className="flex gap-8">
+        <ul className="flex md:gap-8 md:justify-normal justify-center gap-8 py-6">
             <li><a href="#">Terms of Service</a></li>
             <li><a href="#">Privacy Policy</a></li>
         </ul>
