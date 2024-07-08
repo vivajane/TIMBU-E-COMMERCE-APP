@@ -7,8 +7,7 @@ const Cart = () => {
   return (
     <div className='md:px-24 px-6'>
         <CartCheck/>
-        <div className='flex '>
-        
+        <div className='md:flex block'>
         <CartSub/>
         <CartForm/>
       

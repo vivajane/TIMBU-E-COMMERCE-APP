@@ -10,6 +10,7 @@ import Descriptions from "./conponent/Descriptions";
 import Reviews from "./conponent/Reviews";
 import Support from "./conponent/Support";
 import Cart from "./Pages/Cart";
+import MyCart from "./Pages/MyCart";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             </Route>
           </Route>
           <Route path="cart" element={<Cart/>}></Route>
+          <Route path="mycart" element={<MyCart/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

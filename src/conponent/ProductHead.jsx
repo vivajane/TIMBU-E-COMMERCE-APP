@@ -4,9 +4,16 @@ const ProductHead = (props) => {
   const { product } = props;
   return (
     <div>
-      <div className="flex md:mx-24 mx-6">
-        HOME <MdNavigateNext /> {product.category} <MdNavigateNext />{" "}
-        {product.name}
+      <div className="flex items-center gap-3 md:mx-24 mx-6">
+        <h1>Home </h1>
+        <div>
+          <MdNavigateNext />
+        </div>
+        <h1>{product.category}</h1>
+        <div>
+          <MdNavigateNext />
+        </div>
+        <h1>{product.name}</h1>
       </div>
     </div>
   );

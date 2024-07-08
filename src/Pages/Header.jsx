@@ -7,6 +7,7 @@ import { CiSearch } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
 import { useState } from "react";
+import { IoCart } from "react-icons/io5";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -37,7 +38,9 @@ const Header = () => {
         </NavLink>
         <div className="flex gap-4 items-center">
           <img className="" src={fav} alt="fav" />
-          <img src={cart} alt="cart" />
+          <NavLink to ="/mycart">
+          <IoCart />
+          </NavLink>
           <div onClick={clickShow}>
             {open ? <FaTimes /> : <RxHamburgerMenu />}
           </div>
@@ -117,7 +120,11 @@ const Header = () => {
             </div>
           </form>
           <img src={fav} alt="fav" className="md:block w-[30px] h-fit hidden" />
-          <img src={cart} alt="cart" className="md:block hidden w-[30px] h-fit" />
+          <NavLink to ="/mycart">
+          <div>
+            <IoCart className="md:block w-[30px] h-fit hidden" src={cart} alt="cart" />
+          </div>
+          </NavLink>
         </div>
       </div>
     </header>
