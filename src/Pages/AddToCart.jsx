@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 // import collections from '../assets/collections';
 import { ContextProvider } from '../conponent/Context';
 import Product from '../conponent/Product'
-import ProductHead from '../conponent/ProductHead'
+import ProductHead from '../conponent/ProductHead';
+import { Outlet } from 'react-router-dom';
+
 
 const AddToCart = () => {
   const {collections} = useContext(ContextProvider);
@@ -16,7 +18,7 @@ const AddToCart = () => {
       
       <ProductHead product= {product}/>
       <Product product= {product}/>
-      
+      <Outlet/>
     </div>
   )
 }

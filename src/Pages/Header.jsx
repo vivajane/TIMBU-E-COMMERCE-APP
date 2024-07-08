@@ -36,7 +36,7 @@ const Header = () => {
           <img src={logo} alt="logo" />
         </NavLink>
         <div className="flex gap-4 items-center">
-          <img src={fav} alt="fav" />
+          <img className="" src={fav} alt="fav" />
           <img src={cart} alt="cart" />
           <div onClick={clickShow}>
             {open ? <FaTimes /> : <RxHamburgerMenu />}
@@ -116,8 +116,8 @@ const Header = () => {
               </div>
             </div>
           </form>
-          <img src={fav} alt="fav" className="md:block hidden" />
-          <img src={cart} alt="cart" className="md:block hidden" />
+          <img src={fav} alt="fav" className="md:block w-[30px] h-fit hidden" />
+          <img src={cart} alt="cart" className="md:block hidden w-[30px] h-fit" />
         </div>
       </div>
     </header>
