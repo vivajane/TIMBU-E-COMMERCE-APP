@@ -11,49 +11,57 @@ const collections = [
         id: 1,
         name: "Printed T-Shirt",
         price: 2000,
-        image: one
+        image: one,
+        category: "tshirts"
     },
     {
         id: 2,
         name: "Alberta Sunset Men's Shirt",
         price: 12000,
-        image: two
+        image: two,
+        category: "tshirts"
     },
     {
         id: 3,
         name: "Men Cartoon Face Print Tee",
         price: 12000,
-        image: three
+        image: three,
+        category: "tshirts"
     },
     {
         id: 4,
         name: "Unisex Hoodles Pullover SweatsShirt",
         price: 12000,
-        image: four
+        image: four,
+        category: "sweatshirts"
     },
     {
         id: 5,
         name: "Toji Fushiguro Noir Hoodie",
         price: 12000,
-        image: five
+        image: five,
+        category: "hoodies"
     },
     {
         id: 6,
         name: "TOPBRAND LIFE Men's Polyester",
         price: 20000,
-        image: six
+        image: six,
+        category: "sweatshirts"
     },
     {
         id: 7,
         name: "TOPBRAND LIFE Men's Polyester",
         price: 12000,
-        image: seven
+        image: seven,
+        category: "sweatshirts"
     },
     {
         id: 8,
         name: "396 Hooded Casual Jacket",
         price: 12000,
-        image: eight
+        image: eight,
+        category: "hoodies"
     },
 ]
 

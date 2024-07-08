@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Item from '../conponent/Item';
 import collections from '../assets/collections';
 
@@ -7,7 +7,7 @@ const HeroCollections = () => {
     <div className='md:grid grid-cols-4 md:px-24 py-2 md:gap-5 flex flex-col justify-center items-center'>
         {
             collections.map((collection) => (
-                <Item key={collection.id} name={collection.name} price = {collection.price} image= {collection.image}/>
+                <Item key={collection.id} name={collection.name} price = {collection.price} image= {collection.image} id={collection.id}/>
             ))
         }
       

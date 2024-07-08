@@ -111,7 +111,7 @@ const Header = () => {
                 placeholder="search"
                 className="border-[1px] rounded relative w-[300px] h-8 "
               />
-              <div className="absolute top-[100px] right-[195px]">
+              <div className="absolute top-[120px] right-[180px]">
                 <CiSearch size={20} />
               </div>
             </div>

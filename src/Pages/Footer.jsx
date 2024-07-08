@@ -29,12 +29,12 @@ const footers = [
     link: "/hiring",
   },
   {
-    id: 4,
+    id: 5,
     name: "Shipping & Returns",
     link: "/shipping",
   },
   {
-    id: 5,
+    id: 6,
     name: "About",
     link: "/press",
   },
