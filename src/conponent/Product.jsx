@@ -5,10 +5,12 @@ import ratee from "../assets/ratee.png";
 import fav from "../assets/favourite.png";
 import { CiCreditCard1 } from "react-icons/ci";
 import { MdLocalShipping } from "react-icons/md";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet} from "react-router-dom";
+import { ContextProvider } from "./Context";
 
 const Product = (props) => {
   const { product } = props;
+  const{addCart} = useContext(ContextProvider)
 
   console.log(product, "product ooooooo");
   return (
@@ -62,7 +64,7 @@ const Product = (props) => {
             </ul>
             <div className="flex relative">
               <div className="">
-                <button className=" bg-amber-950 text-white md:px-10 md:py-2 px-20 py-2 rounded my-12">
+                <button onClick={() => addCart(product.id)} className=" bg-amber-950 text-white md:px-10 md:py-2 px-20 py-2 rounded my-12">
                   Add to cart
                 </button>
                 <img
@@ -101,6 +103,8 @@ const Product = (props) => {
         </NavLink>
         <NavLink to="support">Support</NavLink>
       </div>
+      <Outlet/>
+      
       
       
     </div>

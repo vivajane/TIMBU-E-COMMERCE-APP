@@ -4,7 +4,7 @@ const ProductHead = (props) => {
   const { product } = props;
   return (
     <div>
-      <div className="flex items-center gap-3 md:mx-24 mx-6">
+      <div className="flex items-center gap-3 md:mx-24 mx-6 md:text-base text-sm">
         <h1>Home </h1>
         <div>
           <MdNavigateNext />

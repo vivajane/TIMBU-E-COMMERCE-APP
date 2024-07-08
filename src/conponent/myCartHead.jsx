@@ -11,6 +11,7 @@ const myCartHead = () => {
           </div>
           <h1>Cart</h1>
         </div>
+        <h1 className="mt-4 font-bold text-2xl">My Cart</h1>
       </div>
     </div>
   );

@@ -33,12 +33,12 @@ function App() {
             path="/sweatshirts"
             element={<Category category="sweatshirts" />}
           ></Route>
-          <Route path="/addtocart" element={<AddToCart />}>
-            <Route path=":addtocardId" element={<AddToCart />}>
+          <Route path="/addtocart/:addtocardId" element={<AddToCart />}>
+            
               <Route path="description" element={<Descriptions />} />
               <Route path="reviews" element={<Reviews />} />
               <Route path="support" element={<Support />} />
-            </Route>
+            
           </Route>
           <Route path="cart" element={<Cart/>}></Route>
           <Route path="mycart" element={<MyCart/>}></Route>

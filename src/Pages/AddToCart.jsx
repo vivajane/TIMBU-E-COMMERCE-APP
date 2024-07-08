@@ -18,7 +18,8 @@ const AddToCart = () => {
       
       <ProductHead product= {product}/>
       <Product product= {product}/>
-      <Outlet/>
+     
+   
     </div>
   )
 }
