@@ -28,7 +28,7 @@ const MyCartSub = () => {
                   <div className=" mt-2">
                     <MdDelete onClick={()=> removeCart(e.id)}/>
                   </div>
-                  <div className="bg-grays bg-gray-400 rounded flex w-10 justify-center text-center items-center mt-[110px] px-6  ">
+                  <div className="bg-grays bg-gray-400 rounded flex w-10 justify-center text-center items-center md:mt-[110px] mt-[60px] px-6  ">
                     <button onClick={()=> removeCart(e.id)} className="px-1">-</button>
                     <button className="px-1">{cart[e.id]}</button>
                     <button  className="px-1"onClick={()=> addCart(e.id)}>+</button>
