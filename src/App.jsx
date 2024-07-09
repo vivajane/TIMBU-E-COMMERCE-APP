@@ -40,8 +40,8 @@ function App() {
               <Route path="support" element={<Support />} />
             
           </Route>
-          <Route path="cart" element={<Cart/>}></Route>
-          <Route path="mycart" element={<MyCart/>}></Route>
+          <Route path="/cart" element={<Cart/>}></Route>
+          <Route path="/mycart" element={<MyCart/>}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

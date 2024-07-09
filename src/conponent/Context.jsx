@@ -24,11 +24,35 @@ const Context = (props) => {
   const removeCart = (cardId) => {
     setCart((prev) => ({ ...prev, [cardId]: prev[cardId] - 1 }));
   };
+  const totalCartAmount = () => {
+    let totalAmount = 0;
+    for (const item in cart) {
+      if (cart[item] > 0) {
+        let iteminfo = collections.find(
+          (product) => product.id === Number(item)
+        );
+        totalAmount += iteminfo.price * cart[item];
+      }
+    }
+    return totalAmount;
+  };
+
+  const totalCartDisplay = () => {
+    let totalCart = 0;
+    for (const item in cart) {
+      if (cart[item] > 0) {
+        totalCart += cart[item];
+      }
+    }
+    return totalCart;
+  };
   const contextValue = {
     collections,
     cart,
     addCart,
-    removeCart
+    removeCart,
+    totalCartAmount, 
+    totalCartDisplay
   };
   return (
     <ContextProvider.Provider value={contextValue}>
