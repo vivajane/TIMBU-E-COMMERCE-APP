@@ -97,7 +97,8 @@ const Product = (props) => {
         <NavLink to="description">Description</NavLink>
         <NavLink to="reviews">
           Reviews{" "}
-          <span className="bg-grays bg-gray-400 px-2 py-1 rounded-full">
+          <span className="bg-grays bg-gray-400 px-2 py-1 rounded-full {({isActive}) => ({
+            className: isActive ? '<hr/>' : 'hr'})}">
             (157)
           </span>
         </NavLink>

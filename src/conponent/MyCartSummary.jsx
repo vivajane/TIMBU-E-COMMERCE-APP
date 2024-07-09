@@ -1,7 +1,13 @@
 import { useContext } from "react";
 import { ContextProvider } from "./Context";
+import { useNavigate } from "react-router-dom";
 
 const MyCartSummary = () => {
+  const navigate = useNavigate();
+  const onClickHandler = (e) => {
+    e.preventDefault();
+    navigate("/cart");
+  }
   const { totalCartAmount, collections, cart } = useContext(ContextProvider);
   return (
     <div className="md:px-10 px-2 border border-gray-400 py-6">
@@ -23,7 +29,7 @@ const MyCartSummary = () => {
                   <h1>Total</h1>
                   <h1>NGN{e.price * cart[e.id]}</h1>
                 </div>
-                <form action="">
+                <form action="" onSubmit={onClickHandler}>
                   <div className="flex gap-4">
                     <input
                       className=" border-gray-400 border-[1px] my-3 py-2 rounded"
