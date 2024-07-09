@@ -17,21 +17,21 @@ const MyCartSub = () => {
                 key={e.id}
                 className="flex justify-between gap-32 flex-1 md:px-3 px-2 border border-gray-400 py-6"
               >
-                <div className="flex gap-3">
-                  <img src={e.image} alt="" className="w-[240px] h-fit" />
+                <div className="flex gap-3 ">
+                  <img src={e.image} alt="" className="md:w-[240px] h-fit" />
                   <div>
                     <p className="font-bold">{e.name}</p>
-                    <p className="font-bold mt-20">NGN{e.price}</p>
+                    <p className="font-bold mt-10">NGN{e.price}</p>
                   </div>
                 </div>
-                <div className="ml-44">
+                <div className="md:ml-44">
                   <div className=" mt-2">
                     <MdDelete onClick={()=> removeCart(e.id)}/>
                   </div>
-                  <div className="bg-grays bg-gray-400 rounded flex w-10 justify-between text-center items-center mt-20 ">
-                    <button onClick={()=> removeCart(e.id)} className="">-</button>
-                    <button>{cart[e.id]}</button>
-                    <button onClick={()=> addCart(e.id)}>+</button>
+                  <div className="bg-grays bg-gray-400 rounded flex w-10 justify-center text-center items-center mt-[110px] px-6  ">
+                    <button onClick={()=> removeCart(e.id)} className="px-1">-</button>
+                    <button className="px-1">{cart[e.id]}</button>
+                    <button  className="px-1"onClick={()=> addCart(e.id)}>+</button>
                   </div>
                 </div>
                 <hr className="border-gray-950 " />

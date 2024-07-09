@@ -18,7 +18,9 @@ const Context = (props) => {
   console.log(cart, "fdhd");
 
   const addCart = (cardId) => {
-    setCart((prev) => ({ ...prev, [cardId]: prev[cardId] + 1 }));
+    setCart((prev) => ({ 
+      ...prev, [cardId]: prev[cardId] + 1 }));
+    alert(`${collections[cardId - 1].name} Added to cart, view cart`);
     console.log(cart, "added")
   };
   const removeCart = (cardId) => {

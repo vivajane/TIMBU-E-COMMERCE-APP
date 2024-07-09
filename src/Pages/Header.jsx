@@ -8,8 +8,12 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
 import { useState } from "react";
 import { IoCart } from "react-icons/io5";
+import { useContext } from "react";
+import { ContextProvider } from "../conponent/Context";
 
 const Header = () => {
+  
+  const {totalCartDisplay} = useContext(ContextProvider)
   const [open, setOpen] = useState(false);
   const clickShow = () => {
     setOpen((open) => !open);
@@ -39,7 +43,11 @@ const Header = () => {
         <div className="flex gap-4 items-center">
           <img className="" src={fav} alt="fav" />
           <NavLink to ="/mycart">
-          <IoCart />
+          <div>
+          <IoCart src={cart} alt="cart" />
+          <p className="font-extrabold absolute top-[-10px] right-[-5px]">{totalCartDisplay()}</p>
+
+          </div>
           </NavLink>
           <div onClick={clickShow}>
             {open ? <FaTimes /> : <RxHamburgerMenu />}
@@ -121,9 +129,11 @@ const Header = () => {
           </form>
           <img src={fav} alt="fav" className="md:block w-[30px] h-fit hidden" />
           <NavLink to ="/mycart">
-          <div>
-            <IoCart className="md:block w-[30px] h-fit hidden" src={cart} alt="cart" />
+          <div className="relative">
+            <IoCart  className="md:block w-[30px] h-fit hidden" src={cart} alt="cart" />
+            <p className="font-extrabold absolute top-[-10px] right-[-5px]">{totalCartDisplay()}</p>
           </div>
+          
           </NavLink>
         </div>
       </div>
