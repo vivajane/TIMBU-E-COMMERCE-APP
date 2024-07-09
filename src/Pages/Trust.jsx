@@ -15,7 +15,10 @@ const Trust = () => {
         Trusted by over 100+ companies
       </h1>
       <div className="text-center ml-[55px]">
-        <ul className="md:flex justify-around grid grid-cols-2 pt-4">
+        <ul className="md:flex justify-around grid grid-cols-2 pt-4" data-aos="flip-left"
+    data-aos-delay="400"
+    data-aos-easing="ease-in-sine"
+    data-aos-duration="600">
           <li>
             <img
               src={channel}
@@ -45,7 +48,10 @@ const Trust = () => {
             />
           </li>
         </ul>
-        <ul className="md:flex justify-around grid grid-cols-2 pt-4">
+        <ul className="md:flex justify-around grid grid-cols-2 pt-4" data-aos="flip-right"
+    data-aos-delay="400"
+    data-aos-easing="ease-in-sine"
+    data-aos-duration="600">
           <li>
             <img src={vans} alt="vasn" className="h-16 w-auto object-contain" />
           </li>

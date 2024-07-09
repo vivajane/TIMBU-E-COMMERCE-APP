@@ -67,14 +67,16 @@ const Product = (props) => {
                 <button onClick={() => addCart(product.id)} className=" bg-amber-950 text-white md:px-10 md:py-2 px-20 py-2 rounded my-12">
                   Add to cart
                 </button>
+                <NavLink to="/mycart">
                 <img
                   src={cart}
                   alt="hh"
                   className="absolute md:top-[55px] md:right-[110px] top-[55px] right-[110px]"
                 />
+                </NavLink>
               </div>
               <img
-                className="w-[30px] md:absolute md:top-[55px] bg-grays bg-gray-400 rounded md:right-[55px] h-fit px-1 py-1 right-[10px] top-[100px]"
+                className="w-[30px] md:absolute md:top-[55px] bg-grays bg-gray-400 rounded md:right-[55px] h-fit px-1 py-1 right-[10px] md:block hidden top-[100px]"
                 src={fav}
                 alt="g"
               />
@@ -105,7 +107,13 @@ const Product = (props) => {
         <NavLink to="support">Support</NavLink>
       </div>
       <Outlet/>
-      
+      {/* <NavLink to ="/mycart">
+          <div>
+          <IoCart src={cart} alt="cart" />
+          <p className="font-extrabold absolute top-[-10px] right-[-5px]">{totalCartDisplay()}</p>
+
+          </div>
+          </NavLink> */}
       
       
     </div>

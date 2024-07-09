@@ -11,8 +11,16 @@ import Reviews from "./conponent/Reviews";
 import Support from "./conponent/Support";
 import Cart from "./Pages/Cart";
 import MyCart from "./Pages/MyCart";
+import OrderModal from "./conponent/OrderModal";
+import CartModal from "./conponent/CartModal";
+import AOS from "aos";
+import { useEffect } from "react";
+import "aos/dist/aos.css";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className=" w-[100%] bg-whites">
       <BrowserRouter>
@@ -34,14 +42,15 @@ function App() {
             element={<Category category="sweatshirts" />}
           ></Route>
           <Route path="/addtocart/:addtocardId" element={<AddToCart />}>
-            
-              <Route path="description" element={<Descriptions />} />
-              <Route path="reviews" element={<Reviews />} />
-              <Route path="support" element={<Support />} />
-            
+            <Route path="description" element={<Descriptions />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="support" element={<Support />} />
           </Route>
-          <Route path="/cart" element={<Cart/>}></Route>
-          <Route path="/mycart" element={<MyCart/>}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/mycart" element={<MyCart />}></Route>
+
+          <Route path="/ordermodal" element={OrderModal}></Route>
+          <Route path="/cartmodal" element={CartModal}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -18,17 +18,17 @@ const MyCartSub = () => {
                 className="flex justify-between gap-32 flex-1 md:px-3 px-2 border border-gray-400 py-6"
               >
                 <div className="flex gap-3 ">
-                  <img src={e.image} alt="" className="md:w-[240px] h-fit" />
+                  <img src={e.image} alt="" className="md:w-[240px]  h-fit" />
                   <div>
-                    <p className="font-bold">{e.name}</p>
-                    <p className="font-bold mt-10">NGN{e.price}</p>
+                    <p className="font-bold text-sm md:text-base">{e.name}</p>
+                    <p className="font-bold md:mt-10 mt-6">NGN{e.price}</p>
                   </div>
                 </div>
                 <div className="md:ml-44">
                   <div className=" mt-2">
                     <MdDelete onClick={()=> removeCart(e.id)}/>
                   </div>
-                  <div className="bg-grays bg-gray-400 rounded flex w-10 justify-center text-center items-center md:mt-[110px] mt-[60px] px-6  ">
+                  <div className="bg-grays bg-gray-400 rounded flex w-10 justify-center text-center items-center md:mt-[110px] mt-[40px] px-6  ">
                     <button onClick={()=> removeCart(e.id)} className="px-1">-</button>
                     <button className="px-1">{cart[e.id]}</button>
                     <button  className="px-1"onClick={()=> addCart(e.id)}>+</button>
