@@ -1,10 +1,39 @@
 import { IoMdContact } from "react-icons/io";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { FaRegCreditCard } from "react-icons/fa6";
+import { useState } from "react";
+// import { SiUikit } from "react-icons/si";
 
 const CartForm = () => {
+  const [form, setForm] = useState({
+    phone: "",
+    email: "",
+    cvv: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    country: "",
+    addone: "",
+    addtwo: "",
+    line: "",
+    suite: "",
+    code: "",
+
+  })
+  const onChangeHandler = (e) => {
+    const{name,value}= e.target;
+    setForm((prev) => {
+      return {
+        ...prev,
+        [name] : value
+      }
+    })
+   
+
+  }
   return (
-    <form action="">
+    <form action="" onSubmit={onChangeHandler}>
       <div className="border-[1px] rounded md:w-[500px] my-4">
         <div className="flex gap-4 pl-2">
           <IoMdContact className="mt-3" size={20} />
