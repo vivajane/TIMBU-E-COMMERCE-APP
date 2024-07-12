@@ -1,6 +1,7 @@
 
 import Item from '../conponent/Item';
 import collections from '../assets/collections';
+import herocollections from '../assets/Hero';
 
 const HeroCollections = () => {
   return (
@@ -9,7 +10,7 @@ const HeroCollections = () => {
     data-aos-easing="ease-in-sine"
     data-aos-duration="600">
         {
-            collections.map((collection) => (
+            herocollections.map((collection) => (
                 <Item key={collection.id} name={collection.name} price = {collection.price} image= {collection.image} id={collection.id}/>
             ))
         }

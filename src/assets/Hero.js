@@ -6,7 +6,7 @@ import five from "../assets/imgfive.png"
 import six from "../assets/imgsix.png"
 import seven from "../assets/imgseven.png"
 import eight from "../assets/imgeight.png"
-const collections = [
+const herocollections= [
     {
         id: 1,
         name: "Printed T-Shirt",
@@ -63,7 +63,6 @@ const collections = [
         image: eight,
         category: "hoodies"
     },
-   
 ]
 
-export default collections;
+export default herocollections;

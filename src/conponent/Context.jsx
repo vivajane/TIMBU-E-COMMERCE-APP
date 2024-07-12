@@ -26,6 +26,9 @@ const Context = (props) => {
   const removeCart = (cardId) => {
     setCart((prev) => ({ ...prev, [cardId]: prev[cardId] - 1 }));
   };
+  const clearCart = (clearId) => {
+    setCart((prev) => ({ ...prev, [clearId]: 0 }));
+  }
   const totalCartAmount = () => {
     let totalAmount = 0;
     for (const item in cart) {
@@ -54,7 +57,8 @@ const Context = (props) => {
     addCart,
     removeCart,
     totalCartAmount, 
-    totalCartDisplay
+    totalCartDisplay,
+    clearCart
   };
   return (
     <ContextProvider.Provider value={contextValue}>

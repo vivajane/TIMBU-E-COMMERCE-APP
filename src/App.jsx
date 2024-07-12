@@ -22,7 +22,7 @@ function App() {
     AOS.init();
   }, []);
   return (
-    <div className=" w-[100%] bg-whites">
+    <div className=" w-[100%] bg-whites ">
       <BrowserRouter>
         <Header />
 

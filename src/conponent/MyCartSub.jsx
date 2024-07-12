@@ -5,7 +5,7 @@ import pic from "../assets/imgone.png";
 import { useContext } from "react";
 import { ContextProvider } from "./Context";
 const MyCartSub = () => {
-  const { totalCartAmount, collections, cart, removeCart, addCart } =
+  const { totalCartAmount, collections, cart, removeCart, addCart,clearCart } =
     useContext(ContextProvider);
   return (
     <div className=" ">
@@ -26,7 +26,7 @@ const MyCartSub = () => {
                 </div>
                 <div className="md:ml-44">
                   <div className=" mt-2">
-                    <MdDelete onClick={()=> removeCart(e.id)}/>
+                    <MdDelete onClick={()=> clearCart(e.id)}/>
                   </div>
                   <div className="bg-grays bg-gray-400 rounded flex w-10 justify-center text-center items-center md:mt-[110px] mt-[40px] px-6  ">
                     <button onClick={()=> removeCart(e.id)} className="px-1">-</button>
