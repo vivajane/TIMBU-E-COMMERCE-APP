@@ -8,10 +8,10 @@ const Item = (props) => {
   return (
     <div className='text-center'>
       <NavLink to= {`addtocart/${props.id}`}>
-      <img src={props.image} alt="img" className='pt-4' />
+      <img src={`https://api.timbu.cloud/images/${props.photos}`} alt={props.name}  className='pt-4 h-72 object-cover w-full' />
       </NavLink>
         
-        <p className='pt-3 font-bold'> {props.name}</p>
+        <p className='pt-3 font-bold line-clamp-1'> {props.name}</p>
         <p className='font-bold'>NGN{props.price}</p>
         <div className='flex gap-1 md:ml-11 ml-24 pb-4'>
             <img src={rate} alt="rate" />

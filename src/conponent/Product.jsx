@@ -7,36 +7,41 @@ import { CiCreditCard1 } from "react-icons/ci";
 import { MdLocalShipping } from "react-icons/md";
 import { NavLink, Outlet} from "react-router-dom";
 import { ContextProvider } from "./Context";
+import { useEffect, useState } from "react";
+import { getSingleCollection } from "../assets/collections";
 
-const Product = (props) => {
-  const { product } = props;
+const Product = ({product}) => {
+  const [collections, setCollections] = useState({});
+  
+  // const { product } = props;
   const{addCart} = useContext(ContextProvider)
 
-  console.log(product, "product ooooooo");
+ 
+
+ 
   return (
     <div className="md:px-24 px-6 my-16">
       <div className="md:flex gap-36">
         <div>
-          <img src={product.image} alt="j" className="w-[500px] h-fit" />
+          <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}alt="j" className="w-[500px] h-fit" />
           <div className="flex gap-4 my-8">
             <img
               className="md:w-[100px] w-[73px] rounded h-fit"
-              src={product.image}
-              alt="imgh"
+              src={`https://api.timbu.cloud/images/${product?.photos[0].url}`} alt={product?.name}
             />
             <img
               className="md:w-[100px] w-[73px] rounded h-fit"
-              src={product.image}
+              src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}
               alt="imgg"
             />
             <img
               className="md:w-[100px] w-[73px] rounded h-fit"
-              src={product.image}
+              src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}
               alt="imgl"
             />
             <img
               className="md:w-[100px] w-[73px] rounded h-fit"
-              src={product.image}
+              src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}
               alt="imgp"
             />
           </div>

@@ -71,10 +71,11 @@ export default collections;
 
 import axios from "axios";
 
-export const getCollections = async(page=1) =>{
+export const getCollections = async(page) =>{
    try{
-    const response = await axios(`https://api.timbu.cloud/products?organization_id=1fc83c22f15b403486e21c41e0447ea5&reverse_sort=false&page=${page}&size=10&Appid=4GUPFVSXQNV4YGU&Apikey=11572620f54d416ea88ac68a5ee6052b20240712143453664117`,
+    const response = await axios(`https://timbu-get-all-products.reavdev.workers.dev/?organization_id=1fc83c22f15b403486e21c41e0447ea5&reverse_sort=false&page=${page}&size=10&Appid=4GUPFVSXQNV4YGU&Apikey=11572620f54d416ea88ac68a5ee6052b20240712143453664117`,
         {
+            
             headers: {
               'Accept': 'application/json', 
               'Content-Type': 'application/json',
@@ -82,7 +83,26 @@ export const getCollections = async(page=1) =>{
           }
     )
     console.log(response.data, "from response")
-    return response;
-   }catch{
+    return response.data;
+   }catch (error){
     console.log("error")}
+} 
+
+
+export const getSingleCollection = async(productId) =>{
+  try{
+   const response = await axios(`https://timbu-get-single-product.reavdev.workers.dev/${productId}?organization_id=1fc83c22f15b403486e21c41e0447ea5&Appid=4GUPFVSXQNV4YGU&Apikey=11572620f54d416ea88ac68a5ee6052b20240712143453664117
+`,
+       {
+           
+           headers: {
+             'Accept': 'application/json', 
+             'Content-Type': 'application/json',
+           }
+         }
+   )
+  //  console.log(response.data, "from response")
+   return response;
+  }catch (error){
+   console.log("error")}
 } 
