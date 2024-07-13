@@ -1,9 +1,10 @@
 
 import Item from '../conponent/Item';
-import collections from '../assets/collections';
+// import collections from '../assets/collections';
 import herocollections from '../assets/Hero';
 
 const HeroCollections = () => {
+  // const fgffg = getCollections();
   return (
     <div className='md:grid grid-cols-4 md:px-24 py-2 md:gap-5 flex flex-col justify-center items-center' data-aos="zoom-in"
     data-aos-delay="400"

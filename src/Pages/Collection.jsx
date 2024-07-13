@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import collections from '../assets/collections';
+import axios from 'axios';
+import { useEffect } from 'react';
+import collections, { getCollections } from '../assets/collections';
 const Collections = [
     {
         id: "1",
@@ -32,6 +34,21 @@ const Collection = () => {
     //     } return collections.name === filter
 
     // })
+    // useEffect(() => {
+    //     const getCollections = async () => {
+    //       try {
+    //         const response = await axios.get(
+    //           "/products?organization_id=1fc83c22f15b403486e21c41e0447ea5&reverse_sort=false&page=0&size=10&Appid=4GUPFVSXQNV4YGU&Apikey=11572620f54d416ea88ac68a5ee6052b20240712143453664117"
+    //         );
+    //         console.log(response, "from response")
+    //         return response;
+    //       } catch {
+    //         console.log("error");
+    //       }
+    //     };
+    //     getCollections()
+    //   }, []);
+    
    
   return (
     <div className='md:px-24 px-6'>

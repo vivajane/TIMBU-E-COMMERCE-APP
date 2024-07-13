@@ -15,7 +15,8 @@ const Category = (props) => {
         if(props.category === collection.category){
           return <Item key= {collection.id} name={collection.name} price={collection.price} image={collection.image} id={collection.id}/>
         } else {
-          null
+          return <Item key= {collection.id} name={collection.name} price={collection.price} image={collection.image} id={collection.id}/>
+          
         }
       })
     }

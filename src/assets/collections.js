@@ -63,7 +63,26 @@ const collections = [
         image: eight,
         category: "hoodies"
     },
-   
 ]
 
+
+
 export default collections;
+
+import axios from "axios";
+
+export const getCollections = async(page=1) =>{
+   try{
+    const response = await axios(`https://api.timbu.cloud/products?organization_id=1fc83c22f15b403486e21c41e0447ea5&reverse_sort=false&page=${page}&size=10&Appid=4GUPFVSXQNV4YGU&Apikey=11572620f54d416ea88ac68a5ee6052b20240712143453664117`,
+        {
+            headers: {
+              'Accept': 'application/json', 
+              'Content-Type': 'application/json',
+            }
+          }
+    )
+    console.log(response.data, "from response")
+    return response;
+   }catch{
+    console.log("error")}
+} 
