@@ -22,13 +22,13 @@ function App() {
     AOS.init();
   }, []);
   return (
-    <div className=" w-[100%] bg-whites ">
+    <div className=' w-[100%] bg-whites '>
       <BrowserRouter>
         <Header />
 
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/all" element={<Category category="all" />}></Route>
+          <Route path='/' element={<Home />}></Route>
+          {/* <Route path="/all" element={<Category category="all" />}></Route>
           <Route
             path="/tshirts"
             element={<Category category="tshirts" />}
@@ -40,17 +40,17 @@ function App() {
           <Route
             path="/sweatshirts"
             element={<Category category="sweatshirts" />}
-          ></Route>
-          <Route path="/addtocart/:addtocardId" element={<AddToCart />}>
-            <Route path="description" element={<Descriptions />} />
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="support" element={<Support />} />
+          ></Route> */}
+          <Route path='/addtocart/:addtocardId' element={<AddToCart />}>
+            <Route path='description' element={<Descriptions />} />
+            <Route path='reviews' element={<Reviews />} />
+            <Route path='support' element={<Support />} />
           </Route>
-          <Route path="/cart" element={<Cart />}></Route>
-          <Route path="/mycart" element={<MyCart />}></Route>
+          <Route path='/cart' element={<Cart />}></Route>
+          <Route path='/mycart' element={<MyCart />}></Route>
 
-          <Route path="/ordermodal" element={OrderModal}></Route>
-          <Route path="/cartmodal" element={CartModal}></Route>
+          <Route path='/ordermodal' element={OrderModal}></Route>
+          <Route path='/cartmodal' element={CartModal}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>
