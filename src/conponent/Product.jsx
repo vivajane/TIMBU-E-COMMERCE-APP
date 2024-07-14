@@ -24,21 +24,21 @@ const Product = ({product}) => {
           <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}alt="j" className="w-[500px] h-fit" />
           <div className="flex gap-4 my-8">
             <img
-              className="md:w-[100px] w-[73px] rounded h-fit"
+              className="lg:w-[100px] w-[73px] md:w-[65px] rounded h-fit"
               src={`https://api.timbu.cloud/images/${product?.photos[0].url}`} alt={product?.name}
             />
             <img
-              className="md:w-[100px] w-[73px] rounded h-fit"
+              className="lg:w-[100px] md:w-[65px]  w-[73px] rounded h-fit"
               src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}
               alt="imgg"
             />
             <img
-              className="md:w-[100px] w-[73px] rounded h-fit"
+              className="lg:w-[100px] md:w-[65px] w-[73px] rounded h-fit"
               src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}
               alt="imgl"
             />
             <img
-              className="md:w-[100px] w-[73px] rounded h-fit"
+              className="lg:w-[100px] md:w-[65px] w-[73px] rounded h-fit"
               src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}
               alt="imgp"
             />
@@ -48,8 +48,8 @@ const Product = ({product}) => {
         <div>
           <h1 className="font-extrabold md:text-xl">{product.name}</h1>
           <div>
-            <div className="flex gap-8 py-2">
-              <div className="flex">
+            <div className="flex gap-8 py-2 md:justify-between lg:justify-between ">
+              <div className="flex md:w-6 ">
                 <img src={rate} alt="rate" />
                 <img src={rate} alt="rate" />
                 <img src={rate} alt="rate" />
@@ -74,7 +74,7 @@ const Product = ({product}) => {
                 <img
                   src={cart}
                   alt="hh"
-                  className=""
+                  className="md:w-8 md:h-fit"
                 />
                 </NavLink>
                 </button>

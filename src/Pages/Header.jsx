@@ -45,7 +45,7 @@ const Header = () => {
           <NavLink to ="/mycart">
           <div>
           <IoCart src={cart} alt="cart" />
-          <p className="font-extrabold absolute top-[-10px] right-[-5px]">{totalCartDisplay()}</p>
+          <p className="font-extrabold absolute top-[40px] right-[50px]">{totalCartDisplay()}</p>
 
           </div>
           </NavLink>
@@ -105,14 +105,14 @@ const Header = () => {
         </ul>
       </div>
      
-      <div className="flex justify-between gap-80 py-4 md:px-24 px-6 items-center">
-        <ul className="md:flex md:gap-6 hidden">
-          <NavLink to="/help">About</NavLink>
-          <NavLink to="/join">Blog</NavLink>
-          <NavLink to="/sign">Shipping & Returns</NavLink>
-          <NavLink to="/sign">Contact Us</NavLink>
+      <div className="flex lg:justify-between md:gap-[60px] py-4 md:px-24 px-6 items-center">
+        <ul className="md:flex md:gap-6 hidden md:text-sm ">
+          <NavLink className="hover:underline" to="/help">About</NavLink>
+          <NavLink className="hover:underline" to="/join">Blog</NavLink>
+          <NavLink className="hover:underline" to="/sign">Shipping & Returns</NavLink>
+          <NavLink className="hover:underline" to="/sign">Contact Us</NavLink>
         </ul>
-        <div className="flex flex-1  gap-6">
+        <div className="flex flex-1  gap-2">
           <form action="">
             <div className="md:block hidden">
               <input
@@ -122,13 +122,13 @@ const Header = () => {
                 placeholder="search"
                 className="border-[1px] rounded relative w-[300px] h-8 "
               />
-              <div className="absolute top-[120px] right-[320px]">
+              <div className="absolute top-[120px] right-[150px]">
                 <CiSearch size={20} />
               </div>
             </div>
           </form>
           <img src={fav} alt="fav" className="md:block w-[30px] h-fit hidden" />
-          <NavLink to ="/mycart">
+          <NavLink className="hover:bg-slate-600" to ="/mycart">
           <div className="relative">
             <IoCart  className="md:block w-[30px] h-fit hidden" src={cart} alt="cart" />
             <p className="font-extrabold absolute top-[-10px] right-[-5px]">{totalCartDisplay()}</p>
