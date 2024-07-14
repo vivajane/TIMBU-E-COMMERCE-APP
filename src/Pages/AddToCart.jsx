@@ -12,16 +12,15 @@ import { getSingleCollection } from "../assets/collections";
 const AddToCart = () => {
   const [collections, setCollections] = useState({});
   const{addtocardId} = useParams();
+  console.log(addtocardId, "addtocardId")
 
    useEffect(() => {
     const fetchSingleCollection = async () => {
-      
-    
     try{
       const response = await getSingleCollection(addtocardId);
       setCollections(response.data);
       console.log(response.data, "response")
-
+      console.log(collections, "ggg")
     }
     catch (error){
       console.log(error, "the error")

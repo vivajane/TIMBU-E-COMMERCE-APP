@@ -2,18 +2,18 @@ import { createContext, useState } from "react";
 import collections from "../assets/collections";
 
 export const ContextProvider = createContext(null);
-const defaultCart = () => {
-  let cart = {};
-  for (let index = 0; index < collections.length + 1; index++) {
-    cart[index] = 0;
-  }
-  return cart;
-};
+// const defaultCart = () => {
+//   let cart = {};
+//   for (let index = 0; index < collections.length + 1; index++) {
+//     cart[index] = 0;
+//   }
+//   return cart;
+// };
 
 const Context = (props) => {
-  const [cart, setCart] = useState(defaultCart());
+  const [cart, setCart] = useState([]);
 
-  console.log(collections);
+  console.log(collections, "collections");
  
   console.log(cart, "fdhd");
 

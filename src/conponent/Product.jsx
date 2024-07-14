@@ -15,14 +15,12 @@ const Product = ({product}) => {
   
   // const { product } = props;
   const{addCart} = useContext(ContextProvider)
-
- 
-
  
   return (
     <div className="md:px-24 px-6 my-16">
       <div className="md:flex gap-36">
-        <div>
+        {product.photos &&
+          <div>
           <img src={`https://api.timbu.cloud/images/${product?.photos[0].url}`}alt="j" className="w-[500px] h-fit" />
           <div className="flex gap-4 my-8">
             <img
@@ -46,6 +44,7 @@ const Product = ({product}) => {
             />
           </div>
         </div>
+        }
         <div>
           <h1 className="font-extrabold md:text-xl">{product.name}</h1>
           <div>
@@ -67,18 +66,19 @@ const Product = ({product}) => {
               <li className="list-disc py-2">Slim fit for any body</li>
               <li className="list-disc py-2">Quality control by JC</li>
             </ul>
-            <div className="flex relative">
+            <div className="flex">
               <div className="">
                 <button onClick={() => addCart(product.id)} className=" bg-amber-950 text-white md:px-10 md:py-2 px-20 py-2 rounded my-12">
-                  Add to cart
-                </button>
-                <NavLink to="/mycart">
+                  <NavLink className="flex gap-8" to="/mycart">
+                  <span>Add to cart </span>
                 <img
                   src={cart}
                   alt="hh"
-                  className="absolute md:top-[55px] md:right-[110px] top-[55px] right-[110px]"
+                  className=""
                 />
                 </NavLink>
+                </button>
+                
               </div>
               <img
                 className="w-[30px] md:absolute md:top-[55px] bg-grays bg-gray-400 rounded md:right-[55px] h-fit px-1 py-1 right-[10px] md:block hidden top-[100px]"
