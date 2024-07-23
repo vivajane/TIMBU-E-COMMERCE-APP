@@ -7,7 +7,7 @@ import MyCartHead from "../conponent/myCartHead";
 
 
 const MyCart = () => {
-  const collections = useContext(ContextProvider)
+  const {collections} = useContext(ContextProvider)
   return (
     <div>
         <MyCartHead/>

@@ -5,44 +5,65 @@ import { ContextProvider } from '../conponent/Context';
 import Product from '../conponent/Product'
 import ProductHead from '../conponent/ProductHead';
 import { Outlet } from 'react-router-dom';
-import { useEffect, useState } from "react";
-import { getSingleCollection } from "../assets/collections";
+
 
 
 const AddToCart = () => {
-  const [collections, setCollections] = useState({});
+  const {collections} = useContext(ContextProvider);
   const{addtocardId} = useParams();
   console.log(addtocardId, "addtocardId")
-
-   useEffect(() => {
-    const fetchSingleCollection = async () => {
-    try{
-      const response = await getSingleCollection(addtocardId);
-      setCollections(response.data);
-      console.log(response.data, "response")
-      console.log(collections, "ggg")
-    }
-    catch (error){
-      console.log(error, "the error")
-    }}
-    fetchSingleCollection();
-
-
-  },[addtocardId])
-  
-  // const {collections} = useContext(ContextProvider);
-  // const product = collections.find((e) => e.id === addtocardId)
-  // console.log(useParams())
+  const product = collections.find((e) => e.id === Number(addtocardId))
+  console.log(useParams())
   console.log(collections, "ggg")
   return (
     <div>
+      {
+        product ? <div>
       
-      <ProductHead product= {collections??{}}/>
-      <Product product= {collections??{}}/>
+        <ProductHead product= {product}/>
+        <Product product= {product}/>
+       
      
-   
+      </div> : <p>Product not found</p>
+        
+      }
     </div>
   )
 }
+// const AddToCart = () => {
+//   const [collections, setCollections] = useState({});
+//   const{addtocardId} = useParams();
+//   console.log(addtocardId, "addtocardId")
+
+//    useEffect(() => {
+//     const fetchSingleCollection = async () => {
+//     try{
+//       const response = await getSingleCollection(addtocardId);
+//       setCollections(response.data);
+//       console.log(response.data, "response")
+//       console.log(collections, "ggg")
+//     }
+//     catch (error){
+//       console.log(error, "the error")
+//     }}
+//     fetchSingleCollection();
+
+
+//   },[addtocardId])
+  
+//   // const {collections} = useContext(ContextProvider);
+//   // const product = collections.find((e) => e.id === addtocardId)
+//   // console.log(useParams())
+//   console.log(collections, "ggg")
+//   return (
+//     <div>
+      
+//       <ProductHead product= {collections??{}}/>
+//       <Product product= {collections??{}}/>
+     
+   
+//     </div>
+//   )
+// }
 
 export default AddToCart
