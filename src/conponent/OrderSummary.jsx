@@ -8,6 +8,7 @@ const OrderSummary = () => {
     e.preventDefault();
     alert("Order Placed Successfully")
     navigate("/");
+    totalCartAmount(null)
   }
   const { totalCartAmount, collections, cart } = useContext(ContextProvider);
   return (

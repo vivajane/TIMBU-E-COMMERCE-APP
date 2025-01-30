@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Pages/Header";
@@ -16,6 +16,8 @@ import CartModal from "./conponent/CartModal";
 import AOS from "aos";
 import { useEffect } from "react";
 import "aos/dist/aos.css";
+import MyCartSub from "./conponent/MyCartSub";
+import Login from "./Pages/Login";
 
 function App() {
   useEffect(() => {
@@ -28,7 +30,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          {/* <Route path="/all" element={<Category category="all" />}></Route>
+          <Route path="/all" element={<Category category="all" />}></Route>
           <Route
             path="/tshirts"
             element={<Category category="tshirts" />}
@@ -40,14 +42,16 @@ function App() {
           <Route
             path="/sweatshirts"
             element={<Category category="sweatshirts" />}
-          ></Route> */}
+          ></Route>
           <Route path='/addtocart/:addtocardId' element={<AddToCart />}>
             <Route path='description' element={<Descriptions />} />
             <Route path='reviews' element={<Reviews />} />
             <Route path='support' element={<Support />} />
           </Route>
           <Route path='/cart' element={<Cart />}></Route>
+          <Route path='/mycartsub' element={<MyCartSub />}></Route>
           <Route path='/mycart' element={<MyCart />}></Route>
+          <Route path='/sign' element={<Login />}></Route>
 
           <Route path='/ordermodal' element={OrderModal}></Route>
           <Route path='/cartmodal' element={CartModal}></Route>

@@ -1,4 +1,4 @@
-import collections from "../assets/collections";
+
 import { MdDelete } from "react-icons/md";
 // import pic from "../assets/imgone.png";
 import { useContext } from "react";
@@ -7,7 +7,7 @@ import { ContextProvider } from "./Context";
 const MyCartSub = () => {
   const { collections, cart, removeCart, addCart,clearCart } =
     useContext(ContextProvider);
-  (
+  return (
     <div className=" ">
       {collections &&
         collections.map((e) => {
