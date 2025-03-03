@@ -76,8 +76,8 @@ const Header = () => {
         }`}
       >
         <ul className="md:hidden grid text-center">
-          <NavLink to="/help" className="py-5">
-            Help
+          <NavLink to="/allcollections" className="py-5">
+            Collections
           </NavLink>
           <NavLink to="/sign" className="py-5">
             Sign In
@@ -107,7 +107,7 @@ const Header = () => {
      
       <div className="flex lg:justify-between md:gap-[60px] py-4 md:px-24 px-6 items-center">
         <ul className="md:flex md:gap-6 hidden md:text-sm ">
-          <NavLink className="hover:underline" to="/help">About</NavLink>
+          <NavLink className="hover:underline" to="/allcollections">Collections</NavLink>
           <NavLink className="hover:underline" to="/join">Blog</NavLink>
           <NavLink className="hover:underline" to="/sign">Shipping & Returns</NavLink>
           <NavLink className="hover:underline" to="/sign">Contact Us</NavLink>

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -18,7 +19,7 @@ const Hero = () => {
           occasion.
         </p>
         <div className="text-center mx-auto my-8 pb-3">
-          <button
+          <NavLink to="/allcollections"
             className="py-3 px-3 rounded bg-grays bg-yellow-700 text-white "
             data-aos="zoom-out"
             data-aos-delay="200"
@@ -26,7 +27,7 @@ const Hero = () => {
             data-aos-duration="600"
           >
             View our Collections
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>

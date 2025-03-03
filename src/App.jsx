@@ -1,4 +1,3 @@
-
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Pages/Header";
@@ -18,19 +17,25 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import MyCartSub from "./conponent/MyCartSub";
 import Login from "./Pages/Login";
+import Collection from "./Pages/Collection";
+import AllCollections from "./Pages/AllCollections";
 
 function App() {
   useEffect(() => {
     AOS.init();
   }, []);
   return (
-    <div className=' w-[100%] bg-whites '>
+    <div className=" w-[100%] bg-whites ">
       <BrowserRouter>
         <Header />
 
         <Routes>
-          <Route path='/' element={<Home />}></Route>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/all" element={<Category category="all" />}></Route>
+          <Route
+            path="/sweatshirts"
+            element={<Category category="sweatshirts" />}
+          ></Route>
           <Route
             path="/tshirts"
             element={<Category category="tshirts" />}
@@ -39,22 +44,20 @@ function App() {
             path="/hoodies"
             element={<Category category="hoodies" />}
           ></Route>
-          <Route
-            path="/sweatshirts"
-            element={<Category category="sweatshirts" />}
-          ></Route>
-          <Route path='/addtocart/:addtocardId' element={<AddToCart />}>
-            <Route path='description' element={<Descriptions />} />
-            <Route path='reviews' element={<Reviews />} />
-            <Route path='support' element={<Support />} />
+          
+          <Route path="/addtocart/:addtocardId" element={<AddToCart />}>
+            <Route path="description" element={<Descriptions />} />
+            <Route path="reviews" element={<Reviews />} />
+            <Route path="support" element={<Support />} />
           </Route>
-          <Route path='/cart' element={<Cart />}></Route>
-          <Route path='/mycartsub' element={<MyCartSub />}></Route>
-          <Route path='/mycart' element={<MyCart />}></Route>
-          <Route path='/sign' element={<Login />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/mycartsub" element={<MyCartSub />}></Route>
+          <Route path="/mycart" element={<MyCart />}></Route>
+          <Route path="/sign" element={<Login />}></Route>
+          <Route path="/allcollections" element={<AllCollections />}></Route>
 
-          <Route path='/ordermodal' element={OrderModal}></Route>
-          <Route path='/cartmodal' element={CartModal}></Route>
+          <Route path="/ordermodal" element={OrderModal}></Route>
+          <Route path="/cartmodal" element={CartModal}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

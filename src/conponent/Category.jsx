@@ -14,10 +14,12 @@ const Category = (props) => {
       collections && collections.map((collection) => {
         if(props.category === collection.category){
           return <Item key= {collection.id} name={collection.name} price={collection.price} image={collection.image} id={collection.id}/>
-        } else {
-          return <Item key= {collection.id} name={collection.name} price={collection.price} image={collection.image} id={collection.id}/>
           
-        }
+        } else
+        return null
+        
+          
+        
       })
     }
   </div>

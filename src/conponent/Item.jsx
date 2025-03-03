@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 const Item = (props) => {
   return (
     <div className='text-center'>
-      <NavLink to= {`addtocart/${props.id}`}>
+      <NavLink to= {`/addtocart/${props.id}`}>
       <img src= {props.image} alt={props.name}  className='pt-4 h-72 object-cover w-full' />
       </NavLink>
         

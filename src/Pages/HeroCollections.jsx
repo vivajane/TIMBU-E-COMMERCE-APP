@@ -1,17 +1,18 @@
 import Item from "../conponent/Item";
-import herocollections from "../assets/Hero";
-import { useState} from "react";
+import { useContext, useState, useEffect } from "react";
 
-const HeroCollections = ({ filter }) => {
-  // const [product, setProduct] = useState([]);
+import { ContextProvider } from "../conponent/Context";
+import collections from "../assets/collections";
 
+const HeroCollections = () => {
+  const{collections} = useContext(ContextProvider);
 
-  // const getCol = herocollections.filter((collection) => collection);
-  // console.log(getCol, "ggg")
-  const filteredCollections = herocollections.filter((collection) =>
-    filter === "All" ? collection : collection.name.includes(filter)
-  );
-  
+  const [hero, setHero] = useState([]);
+  useEffect(() => {
+    setHero(collections.slice(0, 4));
+    console.log(collections);
+  }, [collections]);
+
   return (
     <div
       className="md:grid grid-cols-4 md:px-24 py-2 md:gap-5 flex flex-col justify-center items-center"
@@ -20,8 +21,7 @@ const HeroCollections = ({ filter }) => {
       data-aos-easing="ease-in-sine"
       data-aos-duration="600"
     >
-      
-      {filteredCollections.map((collection) => (
+      {hero.map((collection) => (
         <Item
           key={collection.id}
           name={collection.name}
@@ -30,7 +30,6 @@ const HeroCollections = ({ filter }) => {
           id={collection.id}
         />
       ))}
-      
     </div>
   );
 };
@@ -71,11 +70,11 @@ const HeroCollections = ({ filter }) => {
 //     filter === "All" ? collection : collection.name.includes(filter)
 //   );
 //   if (isLoading)
-//     return 
+//     return
 //       // <Center>
 //       //   <Loader />
 //       // </Center>
-    
+
 //   if (isError) return <div>Error fetching products</div>;
 //   if (isEmpty) return <div>No products found</div>;
 

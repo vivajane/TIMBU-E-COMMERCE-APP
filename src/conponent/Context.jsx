@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import collections from "../assets/collections";
+// import collections from "../assets/collections";
 
 export const ContextProvider = createContext(null);
 const defaultCart = () => {
