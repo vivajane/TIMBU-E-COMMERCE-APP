@@ -12,20 +12,29 @@ const collections = [
         name: "Printed T-Shirt",
         price: 2000,
         image: one,
-        category: "tshirts"
+        category: "tshirts",
+        subcategory: "men",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
     },
     {
         id: 2,
         name: "Alberta Sunset Men's Shirt",
         price: 12000,
         image: two,
-        category: "tshirts"
+        category: "tshirts",
+        subcategory: "men",
+        bestSeller: false,
+        sizes: ["x", "xl", "xxl"]
     },
     {
         id: 3,
         name: "Men Cartoon Face Print Tee",
         price: 12000,
         image: three,
+        subcategory: "men",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"],
         category: "tshirts"
     },
     {
@@ -33,35 +42,170 @@ const collections = [
         name: "Unisex Hoodles Pullover SweatsShirt",
         price: 12000,
         image: four,
-        category: "sweatshirts"
+        category: "sweatshirts",
+        subcategory: "men",
+        bestSeller: false,
+        sizes: ["x", "xl", "xxl"]
     },
     {
         id: 5,
         name: "Toji Fushiguro Noir Hoodie",
         price: 12000,
         image: five,
-        category: "hoodies"
+        category: "hoodies",
+        subcategory: "men",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
     },
     {
         id: 6,
         name: "TOPBRAND LIFE Men's Polyester",
         price: 20000,
         image: six,
-        category: "sweatshirts"
+        category: "sweatshirts",
+        subcategory: "men",
+        bestSeller: false,
+        sizes: ["x", "xl", "xxl"]
     },
     {
         id: 7,
         name: "TOPBRAND LIFE Men's Polyester",
         price: 12000,
         image: seven,
-        category: "sweatshirts"
+        category: "sweatshirts",
+        subcategory: "men",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
     },
     {
         id: 8,
         name: "396 Hooded Casual Jacket",
         price: 12000,
         image: eight,
-        category: "hoodies"
+        category: "hoodies",
+        subcategory: "men",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 9,
+        name: "396 Hooded Casual Jacket",
+        price: 18000,
+        image: "https://images.pexels.com/photos/4620623/pexels-photo-4620623.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "hoodies",
+        subcategory: "women",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 10,
+        name: "396 Hooded Casual Jacket",
+        price: 18000,
+        image: "https://images.pexels.com/photos/6311235/pexels-photo-6311235.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "hoodies",
+        subcategory: "women",
+        bestSeller: false,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 11,
+        name: "396 SweatShirt Casual Jacket",
+        price: 18000,
+        image: "https://images.pexels.com/photos/7001101/pexels-photo-7001101.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "sweatshirts",
+        subcategory: "women",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 12,
+        name: "296 Shirt Casual Jacket",
+        price: 8000,
+        image: "https://images.pexels.com/photos/3805766/pexels-photo-3805766.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "tshirts",
+        subcategory: "women",
+        bestSeller: false,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 13,
+        name: "96 Shirt Casual Jacket",
+        price: 7000,
+        image: "https://images.pexels.com/photos/6214086/pexels-photo-6214086.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "tshirts",
+        subcategory: "women",
+        bestSeller: false,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 14,
+        name: "296 Shirt kids Jacket",
+        price: 8000,
+        image: "https://images.pexels.com/photos/6299252/pexels-photo-6299252.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "tshirts",
+        subcategory: "kids",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 15,
+        name: "297 Shirt kids Jacket",
+        price: 4000,
+        image: "https://images.pexels.com/photos/7862322/pexels-photo-7862322.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "tshirts",
+        subcategory: "kids",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 16,
+        name: "296 Shirt girl Jacket",
+        price: 8000,
+        image: "https://images.pexels.com/photos/6437519/pexels-photo-6437519.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "hoodies",
+        subcategory: "kids",
+        bestSeller: false,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 17,
+        name: "298 hoodies boy Jacket",
+        price: 9000,
+        image: "https://images.pexels.com/photos/6743183/pexels-photo-6743183.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "hoodies",
+        subcategory: "kids",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 18,
+        name: "298 hoodies boy Jacket",
+        price: 9000,
+        image: "https://images.pexels.com/photos/8435769/pexels-photo-8435769.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "hoodies",
+        subcategory: "kids",
+        bestSeller: false,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 19,
+        name: "298 hoodies boy Jacket",
+        price: 9000,
+        image: "https://images.pexels.com/photos/6749771/pexels-photo-6749771.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "hoodies",
+        subcategory: "kids",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
+    },
+    {
+        id: 20,
+        name: "298 hoodies boy Jacket",
+        price: 9000,
+        image: "https://images.pexels.com/photos/7139817/pexels-photo-7139817.jpeg?auto=compress&cs=tinysrgb&w=400",
+        category: "hoodies",
+        subcategory: "kids",
+        bestSeller: true,
+        sizes: ["x", "xl", "xxl"]
     },
 ]
 

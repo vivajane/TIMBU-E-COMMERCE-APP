@@ -3,16 +3,18 @@ import Hero from "./Hero";
 import Trust from "./Trust";
 import Collection from "./Collection";
 import HeroCollections from "./HeroCollections";
-import { useState } from "react";
+import BestSeller from "../conponent/BestSeller";
+// import { useState } from "react";
 
 const Home = () => {
-  const [filter, setFilter] = useState("All");
+  // const [filter, setFilter] = useState("All");
   return (
     <div>
       <Hero />
       <Trust />
-      <Collection setFilter={setFilter} />
-      <HeroCollections filter={filter} />
+      <BestSeller/>
+      <Collection />
+      <HeroCollections />
     </div>
   );
 };

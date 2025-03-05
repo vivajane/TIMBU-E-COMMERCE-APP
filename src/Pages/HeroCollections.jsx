@@ -10,12 +10,12 @@ const HeroCollections = () => {
   const [hero, setHero] = useState([]);
   useEffect(() => {
     setHero(collections.slice(0, 4));
-    console.log(collections);
+    // console.log(collections);
   }, [collections]);
 
   return (
     <div
-      className="md:grid grid-cols-4 md:px-24 py-2 md:gap-5 flex flex-col justify-center items-center"
+      className="md:grid grid-cols-4 md:px-24 md:gap-5 flex flex-col justify-center items-center"
       data-aos="zoom-in"
       data-aos-delay="400"
       data-aos-easing="ease-in-sine"

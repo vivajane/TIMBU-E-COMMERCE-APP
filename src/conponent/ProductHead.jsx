@@ -1,11 +1,12 @@
 import { MdNavigateNext } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const ProductHead = (props) => {
   const { product } = props;
   return (
     <div>
       <div className="flex items-center gap-3 md:mx-24 mx-6 md:text-base text-sm">
-        <h1>Home </h1>
+        <NavLink to = "/">Home</NavLink>
         <div>
           <MdNavigateNext />
         </div>

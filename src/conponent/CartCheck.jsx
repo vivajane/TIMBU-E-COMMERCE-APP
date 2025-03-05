@@ -1,10 +1,11 @@
 import { MdNavigateNext } from "react-icons/md";
+import { NavLink } from "react-router-dom";
 
 const CartCheck = () => {
   return (
     <div>
       <div className="flex items-center gap-3">
-        <h1>Home </h1>
+       <NavLink to ="/" >Home</NavLink>
         <div>
           <MdNavigateNext />
         </div>

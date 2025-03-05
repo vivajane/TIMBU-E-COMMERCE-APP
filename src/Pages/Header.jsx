@@ -57,15 +57,15 @@ const Header = () => {
       </div>
       
       <form action="" className="md:hidden block">
-          <div className="">
+          <div className="px-8">
             <input
               type="search"
               name="search"
               id=""
-              placeholder="search"
+              placeholder="  search"
               className="border-[1px] rounded relative w-full mx-auto h-8 "
             />
-            <div className="absolute top-[95px] right-[15px]">
+            <div className="absolute top-[95px] right-[45px]">
               <CiSearch size={20} />
             </div>
           </div>
@@ -76,19 +76,19 @@ const Header = () => {
         }`}
       >
         <ul className="md:hidden grid text-center">
-          <NavLink to="/allcollections" className="py-5">
-            Collections
+          <NavLink to="/help" className="py-5">
+            Help
           </NavLink>
           <NavLink to="/sign" className="py-5">
             Sign In
           </NavLink>
-          <NavLink to="/help" className="py-5">
+          <NavLink to="/about" className="py-5">
             About
           </NavLink>
           <NavLink to="/join" className="py-5">
-            Blog
+            Join
           </NavLink>
-          <NavLink to="/sign" className="py-5">
+          <NavLink to="/ship" className="py-5">
             Shipping & Returns
           </NavLink>
           <NavLink to="/sign" className="py-5">
@@ -105,24 +105,24 @@ const Header = () => {
         </ul>
       </div>
      
-      <div className="flex lg:justify-between md:gap-[60px] py-4 md:px-24 px-6 items-center">
-        <ul className="md:flex md:gap-6 hidden md:text-sm ">
-          <NavLink className="hover:underline" to="/allcollections">Collections</NavLink>
-          <NavLink className="hover:underline" to="/join">Blog</NavLink>
-          <NavLink className="hover:underline" to="/sign">Shipping & Returns</NavLink>
+      <div className="flex md:justify-between md:gap-[80px] lg:gap-[150px] py-4 md:px- px-6 lg:px-24 items-center">
+        <ul className="md:flex md:gap-6 hidden md:text-xs ">
+          <NavLink className="hover:underline" to="/help">About</NavLink>
+          <NavLink className="hover:underline" to="/join">Join</NavLink>
+          <NavLink className="hover:underline" to="/ship">Shipping & Returns</NavLink>
           <NavLink className="hover:underline" to="/sign">Contact Us</NavLink>
         </ul>
-        <div className="flex flex-1  gap-2">
-          <form action="">
-            <div className="md:block hidden">
+        <div className="flex gap-2">
+          <form className="" action="">
+            <div className="md:block hidden p">
               <input
                 type="search"
                 name="search"
                 id=""
                 placeholder="search"
-                className="border-[1px] rounded relative w-[300px] h-8 "
+                className="border-[1px] rounded  relative w-[300px] h-8 "
               />
-              <div className="absolute top-[120px] right-[490px]">
+              <div className="absolute top-[120px] md:right-[100px] lg:right-[180px]">
                 <CiSearch size={20} />
               </div>
             </div>
@@ -130,8 +130,7 @@ const Header = () => {
           <img src={fav} alt="fav" className="md:block w-[30px] h-fit hidden" />
           <NavLink className="hover:bg-slate-600" to ="/mycart">
           <div className="relative">
-            <IoCart  className="md:block w-[30px] h-fit hidden" src={cart} alt="cart" />
-            <p className="font-extrabold absolute top-[-10px] right-[-5px]">{totalCartDisplay()}</p>
+            
           </div>
           
           </NavLink>
