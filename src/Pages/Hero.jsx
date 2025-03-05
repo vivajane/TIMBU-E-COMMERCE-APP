@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="bg-shirt md:bg-cover md:h-screen bg-cover bg-no-repeat">
+    <div className="bg-[url('/bgshirt.png')] md:bg-cover md:h-screen bg-cover bg-no-repeat">
       <div className="md:pt-9">
         <h1 className="text-white md:font-[500px] md:text-5xl text:3xl text-center md:pt-60 pt-24">
           Unleash Your Inner Style Icon
