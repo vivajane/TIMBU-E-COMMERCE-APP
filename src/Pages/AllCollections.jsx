@@ -117,15 +117,15 @@ const AllCollections = () => {
               <h1 className="font-bold py-2">CATEGORIES</h1>
               <div className="space-y-1">
                 <div className="flex gap-2">
-                  <input type="checkbox" name="" id="" />
+                  <input onChange={checkFilter} value={"men"} type="checkbox" name="" id="" />
                   <p>Men</p>
                 </div>
                 <div className="flex gap-2">
-                  <input type="checkbox" name="" id="" />
+                  <input onChange={checkFilter} value={"women"} type="checkbox" name="" id="" />
                   <p>Women</p>
                 </div>
                 <div className="flex gap-2">
-                  <input type="checkbox" name="" id="" />
+                  <input onChange={checkFilter} value={"kids"} type="checkbox" name="" id="" />
                   <p>Kids</p>
                 </div>
               </div>
@@ -134,15 +134,17 @@ const AllCollections = () => {
               <h1 className="font-bold py-2">TYPES</h1>
               <div className="space-y-1">
                 <div className="flex gap-2">
-                  <input type="checkbox" name="" id="" />
+                  <input onChange={checkTypes} value={"tshirts"} type="checkbox" name="" id="" />
                   <p>T-Shirts</p>
                 </div>
                 <div className="flex gap-2">
-                  <input type="checkbox" name="" id="" />
+                  <input onChange={checkTypes} value={"hoodies"} type="checkbox" name="" id="" />
                   <p>Hoodies</p>
                 </div>
                 <div className="flex gap-2">
-                  <input type="checkbox" name="" id="" />
+                  <input  onChange={checkTypes}
+                value={"sweatshirts"}
+                type="checkbox"  name="" id="" />
                   <p>SweatShirts</p>
                 </div>
               </div>

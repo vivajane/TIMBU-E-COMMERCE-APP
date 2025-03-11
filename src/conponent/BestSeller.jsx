@@ -12,13 +12,13 @@ const BestSeller = () => {
   return (
     <div>
       <div className=" pt-2 md:gap-14 flex gap-4 font-extrabold justify-center items-center">
-        <h1 className="md:text-2xl hidden sm:block text-xl">
+        <h1 className="md:text-2xl text-sm  sm:text-xl">
           <span className="text-amber-950 px-2">Our</span>
           <span className="text-grays-900">Best Sellers</span>
         </h1>
       </div>
       <div
-        className="grid md:grid-cols-3 md:px-24 md:gap-5 lg:grid-cols-4 grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-3  py-2 "
+        className="grid md:grid-cols-3 md:px-24 px-2 md:gap-5 lg:grid-cols-4 grid-cols-2 gap-2 sm:grid-cols-2 sm:gap-3  py-2 "
         data-aos="zoom-in"
         data-aos-delay="400"
         data-aos-easing="ease-in-sine"

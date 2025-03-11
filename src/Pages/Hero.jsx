@@ -18,7 +18,7 @@ const Hero = () => {
           Discover the latest trends in men’s fashion, <br /> tailored for every
           occasion.
         </p>
-        <div className="text-center mx-auto my-8 pb-3">
+        <div className="text-center mx-auto my-8 py-6">
           <NavLink to="/allcollections"
             className="py-3 px-3 rounded bg-grays bg-yellow-700 text-white "
             data-aos="zoom-out"
