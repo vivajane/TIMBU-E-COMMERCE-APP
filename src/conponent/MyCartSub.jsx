@@ -1,84 +1,73 @@
-
 import { MdDelete } from "react-icons/md";
-// import pic from "../assets/imgone.png";
 import { useContext } from "react";
 import { ContextProvider } from "./Context";
 
 const MyCartSub = () => {
-  const { collections, cart, removeCart, addCart,clearCart } =
+  const { collections, cart, removeCart, addCart, clearCart } =
     useContext(ContextProvider);
+
   return (
-    <div className=" ">
-      {collections &&
-        collections.map((e) => {
-          if (cart[e.id] > 0) {
+    <div>
+      {collections.map((item) => {
+        const cartItem = cart[item.id];
+
+        // If no cart entry for this item, skip it
+        if (!cartItem) return null;
+
+        // Display for each size
+        return Object.entries(cartItem).map(([size, quantity]) => {
+          if (quantity > 0) {
             return (
               <div
-                key={e.id}
-                className="flex justify-between gap-32 flex-1 md:px-3 px-2 border border-gray-400 py-6"
+                key={`${item.id}-${size}`}
+                className="flex justify-between items-start gap-8 md:gap-32 flex-1 md:px-3 px-2 border border-gray-400 py-6"
               >
-                <div className="flex gap-3 ">
-                  <img src={e.image} alt="" className="md:w-[240px]  h-fit" />
+                <div className="flex gap-6">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="md:w-[240px] h-fit"
+                  />
                   <div>
-                    <p className="font-bold text-sm md:text-base">{e.name}</p>
-                    <p className="font-bold md:mt-10 mt-6">NGN{e.price}</p>
+                    <p className="font-bold text-sm md:text-base">
+                      {item.name}
+                    </p>
+                    <p className="text-sm">Size: {size}</p>
+                    <p className="font-bold mt-2">NGN {item.price}</p>
                   </div>
                 </div>
-                <div className="md:ml-44">
-                  <div className=" mt-2">
-                    <MdDelete onClick={()=> clearCart(e.id)}/>
+
+                <div className="flex flex-col items-center">
+                  <div className="mb-2">
+                    <MdDelete
+                      onClick={() => clearCart(item.id)}
+                      className="cursor-pointer"
+                    />
                   </div>
-                  <div className="bg-grays bg-gray-400 rounded flex w-10 justify-center text-center items-center md:mt-[110px] mt-[40px] px-6  ">
-                    <button onClick={()=> removeCart(e.id)} className="px-1">-</button>
-                    <button className="px-1">{cart[e.id]}</button>
-                    <button  className="px-1"onClick={()=> addCart(e.id)}>+</button>
+                  <div className="bg-gray-400 rounded flex w-fit justify-center items-center px-4 py-1 my-8">
+                    <button
+                      onClick={() => removeCart(item.id, size)}
+                      className="px-2"
+                    >
+                      -
+                    </button>
+                    <span className="px-2">{quantity}</span>
+                    <button
+                      onClick={() => addCart(item.id, size)}
+                      className="px-2"
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
-                <hr className="border-gray-950 " />
               </div>
             );
           }
-        })}
+          return null;
+        });
+      })}
     </div>
   );
 };
-// const MyCartSub = () => {
-//   const { totalCartAmount, collections, cart, removeCart, addCart,clearCart } =
-//     useContext(ContextProvider);
-//   (
-//     <div className=" ">
-//       {collections &&
-//         collections.map((e) => {
-//           if (cart[e.id] > 0) {
-//             return (
-//               <div
-//                 key={e.id}
-//                 className="flex justify-between gap-32 flex-1 md:px-3 px-2 border border-gray-400 py-6"
-//               >
-//                 <div className="flex gap-3 ">
-//                   <img src={e.image} alt="" className="md:w-[240px]  h-fit" />
-//                   <div>
-//                     <p className="font-bold text-sm md:text-base">{e.name}</p>
-//                     <p className="font-bold md:mt-10 mt-6">NGN{e.price}</p>
-//                   </div>
-//                 </div>
-//                 <div className="md:ml-44">
-//                   <div className=" mt-2">
-//                     <MdDelete onClick={()=> clearCart(e.id)}/>
-//                   </div>
-//                   <div className="bg-grays bg-gray-400 rounded flex w-10 justify-center text-center items-center md:mt-[110px] mt-[40px] px-6  ">
-//                     <button onClick={()=> removeCart(e.id)} className="px-1">-</button>
-//                     <button className="px-1">{cart[e.id]}</button>
-//                     <button  className="px-1"onClick={()=> addCart(e.id)}>+</button>
-//                   </div>
-//                 </div>
-//                 <hr className="border-gray-950 " />
-//               </div>
-//             );
-//           }
-//         })}
-//     </div>
-//   );
-// };
 
 export default MyCartSub;

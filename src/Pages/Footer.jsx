@@ -47,9 +47,9 @@ const Footer = () => {
         <img src={logo} alt="logo" />
       </NavLink>
       <div className="md:flex justify-between">
-        <div className="md:flex items-center py-4 gap-8">
+        <div className="lg:flex items-center py-4 gap-8">
           {footers.map((footer) => (
-            <li key={footer.id} className="list-none hover:font-bold py-3">
+            <li key={footer.id} className="list-none  text-sm lg:text-xs hover:font-bold py-3">
               <NavLink
                 to={footer.link}
                 className={(isActive) => (isActive ? "text-black" : null)}
@@ -68,9 +68,9 @@ const Footer = () => {
       </div>
 
       <div>
-        <hr className="border-gray-950 mt-16" />
+        <hr className="border-gray-950 mt-16 pt-6" />
       </div>
-      <div className="md:flex items-center justify-between md:py-0 py-6">
+      <div className="lg:flex items-center justify-between md:py-0 py-6">
         <ul className="flex gap-4 justify-center">
             <li><FaFacebook/></li>
             <li><FaInstagram/></li>

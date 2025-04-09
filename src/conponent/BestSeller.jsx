@@ -6,7 +6,12 @@ const BestSeller = () => {
   const { collections } = useContext(ContextProvider);
   const [bestSeller, setBestSeller] = useState([]);
   useEffect(() => {
-    setBestSeller(collections.slice(4, 12));
+    if (collections.length > 0) {
+      let productCopy = collections.slice();
+      productCopy = productCopy.filter((item) => item.bestSeller === true);
+      setBestSeller(productCopy.slice(5, 12));
+    }
+    // setBestSeller(collections.slice(4, 12));
     // console.log(collections, "from best seller");
   }, [collections]);
   return (

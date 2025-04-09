@@ -20,7 +20,7 @@ const AddToCart = () => {
       {
         product ? <div>
       
-        <ProductHead product= {product}/>
+        {/* <ProductHead product= {product}/> */}
         <Product product= {product}/>
        
      

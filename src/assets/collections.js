@@ -172,7 +172,7 @@ const collections = [
         name: "298 hoodies boy Jacket",
         price: 9000,
         image: "https://images.pexels.com/photos/6743183/pexels-photo-6743183.jpeg?auto=compress&cs=tinysrgb&w=400",
-        category: "hoodies",
+        category: "sweatshirts",
         subcategory: "kids",
         bestSeller: true,
         sizes: ["x", "xl", "xxl"]

@@ -6,12 +6,14 @@ import { FaAngleUp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 
 const AllCollections = () => {
-  const { collections } = useContext(ContextProvider);
+  const { collections, showSearch, search } = useContext(ContextProvider);
   const [allCollections, setAllCollections] = useState([]);
   const [show, setShow] = useState(false);
   const [showFilter, setShowFilter] = useState([]);
   const [types, setTypes] = useState([]);
+  const [sort, setSort] = useState("rel");
 
+  // log the values of filter by category
   const checkFilter = (e) => {
     if (showFilter.includes(e.target.value)) {
       setShowFilter((prev) => prev.filter((item) => item !== e.target.value));
@@ -20,6 +22,7 @@ const AllCollections = () => {
     }
   };
 
+  // log the values of filter by type
   const checkTypes = (e) => {
     if (types.includes(e.target.value)) {
       setTypes((prev) => prev.filter((item) => item !== e.target.value));
@@ -28,19 +31,43 @@ const AllCollections = () => {
     }
   };
 
-  const FilterUse = useCallback(() => {
-    let filterSec = [...collections];
+  // to display filtered products
+  const FilterUse = () => {
+    let filterSec = collections.slice(); // making a copy of collections
     if (showFilter.length > 0) {
       filterSec = filterSec.filter((item) =>
         showFilter.includes(item.subcategory)
       );
     }
 
-    if(types.length > 0){
-      filterSec= filterSec.filter((item) => types.includes(item.category))
+    
+    if(search && showSearch){
+      filterSec = filterSec.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
     }
-    setAllCollections(filterSec); // Update allCollections instead of showFilter
-  }, [collections, showFilter, types]); // Recomputes only when `collections` or `showFilter` changes
+
+    if (types.length > 0) {
+      filterSec = filterSec.filter((item) => types.includes(item.category));
+    }
+    setAllCollections(filterSec);
+  };
+
+  const handleSort = (e) => {
+    setSort(e.target.value);
+  };
+
+
+  const sortItems = () => {
+    let cpAllCollections = allCollections.slice();
+    if(sort === "low"){
+      setAllCollections(cpAllCollections.sort((a, b) => a.price - b.price));
+    }else if(sort === "high"){
+      setAllCollections(cpAllCollections.sort((a, b) => b.price - a.price));
+    }else{
+      setAllCollections(cpAllCollections)
+    }
+
+  }
+
 
   const showClick = () => {
     setShow((show) => !show);
@@ -48,11 +75,16 @@ const AllCollections = () => {
 
   useEffect(() => {
     FilterUse();
-  }, [FilterUse]);
+  }, [showFilter, types, search, showSearch]);
+  
 
+useEffect(() => {
+    sortItems();
+  }, [sort]);
+  
   useEffect(() => {
     setAllCollections(collections);
-  }, [collections]);
+  }, []);
   return (
     <div className="flex gap-8 lg:px-16 md:px-12 relative sm:px-9 px-6 ">
       <div className="space-y-6 sticky h-screen top-0 ">
@@ -117,15 +149,33 @@ const AllCollections = () => {
               <h1 className="font-bold py-2">CATEGORIES</h1>
               <div className="space-y-1">
                 <div className="flex gap-2">
-                  <input onChange={checkFilter} value={"men"} type="checkbox" name="" id="" />
+                  <input
+                    onChange={checkFilter}
+                    value={"men"}
+                    type="checkbox"
+                    name=""
+                    id=""
+                  />
                   <p>Men</p>
                 </div>
                 <div className="flex gap-2">
-                  <input onChange={checkFilter} value={"women"} type="checkbox" name="" id="" />
+                  <input
+                    onChange={checkFilter}
+                    value={"women"}
+                    type="checkbox"
+                    name=""
+                    id=""
+                  />
                   <p>Women</p>
                 </div>
                 <div className="flex gap-2">
-                  <input onChange={checkFilter} value={"kids"} type="checkbox" name="" id="" />
+                  <input
+                    onChange={checkFilter}
+                    value={"kids"}
+                    type="checkbox"
+                    name=""
+                    id=""
+                  />
                   <p>Kids</p>
                 </div>
               </div>
@@ -134,17 +184,33 @@ const AllCollections = () => {
               <h1 className="font-bold py-2">TYPES</h1>
               <div className="space-y-1">
                 <div className="flex gap-2">
-                  <input onChange={checkTypes} value={"tshirts"} type="checkbox" name="" id="" />
+                  <input
+                    onChange={checkTypes}
+                    value={"tshirts"}
+                    type="checkbox"
+                    name=""
+                    id=""
+                  />
                   <p>T-Shirts</p>
                 </div>
                 <div className="flex gap-2">
-                  <input onChange={checkTypes} value={"hoodies"} type="checkbox" name="" id="" />
+                  <input
+                    onChange={checkTypes}
+                    value={"hoodies"}
+                    type="checkbox"
+                    name=""
+                    id=""
+                  />
                   <p>Hoodies</p>
                 </div>
                 <div className="flex gap-2">
-                  <input  onChange={checkTypes}
-                value={"sweatshirts"}
-                type="checkbox"  name="" id="" />
+                  <input
+                    onChange={checkTypes}
+                    value={"sweatshirts"}
+                    type="checkbox"
+                    name=""
+                    id=""
+                  />
                   <p>SweatShirts</p>
                 </div>
               </div>
@@ -163,6 +229,7 @@ const AllCollections = () => {
           </div>
           <div className="  text-xs sm:text-sm md:text-base px-2">
             <select
+              onChange={handleSort}
               className="border-[1px] border-black"
               name="relevant"
               id="relevant"

@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import Header from "./Pages/Header";
 import Home from "./Pages/Home";
 import Category from "./conponent/Category";
@@ -19,48 +20,56 @@ import MyCartSub from "./conponent/MyCartSub";
 import Login from "./Pages/Login";
 import Collection from "./Pages/Collection";
 import AllCollections from "./Pages/AllCollections";
+import Search from "./conponent/Search";
+import { useLocation } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
+  const setLocation = location.pathname.includes("allcollections");
+  useEffect(() => {
+    console.log(location.pathname);
+  }, [location]);
   useEffect(() => {
     AOS.init();
   }, []);
   return (
     <div className=" w-[100%] bg-whites ">
-      <BrowserRouter>
-        <Header />
+      <ToastContainer />
 
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/all" element={<Category category="all" />}></Route>
-          <Route
-            path="/sweatshirts"
-            element={<Category category="sweatshirts" />}
-          ></Route>
-          <Route
-            path="/tshirts"
-            element={<Category category="tshirts" />}
-          ></Route>
-          <Route
-            path="/hoodies"
-            element={<Category category="hoodies" />}
-          ></Route>
-          
-          <Route path="/addtocart/:addtocardId" element={<AddToCart />}>
-            <Route path="description" element={<Descriptions />} />
-            <Route path="reviews" element={<Reviews />} />
-            <Route path="support" element={<Support />} />
-          </Route>
-          <Route path="/cart" element={<Cart />}></Route>
-          <Route path="/mycartsub" element={<MyCartSub />}></Route>
-          <Route path="/mycart" element={<MyCart />}></Route>
-          <Route path="/sign" element={<Login />}></Route>
-          <Route path="/allcollections" element={<AllCollections />}></Route>
+      <Header />
+      {setLocation && <Search />}
 
-          <Route path="/ordermodal" element={OrderModal}></Route>
-          <Route path="/cartmodal" element={CartModal}></Route>
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/all" element={<Category category="all" />}></Route>
+        <Route
+          path="/sweatshirts"
+          element={<Category category="sweatshirts" />}
+        ></Route>
+        <Route
+          path="/tshirts"
+          element={<Category category="tshirts" />}
+        ></Route>
+        <Route
+          path="/hoodies"
+          element={<Category category="hoodies" />}
+        ></Route>
+
+        <Route path="/addtocart/:addtocardId" element={<AddToCart />}>
+          <Route path="description" element={<Descriptions />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="support" element={<Support />} />
+        </Route>
+        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/mycartsub" element={<MyCartSub />}></Route>
+        <Route path="/mycart" element={<MyCart />}></Route>
+        <Route path="/sign" element={<Login />}></Route>
+        <Route path="/allcollections" element={<AllCollections />}></Route>
+
+        <Route path="/ordermodal" element={OrderModal}></Route>
+        <Route path="/cartmodal" element={CartModal}></Route>
+      </Routes>
+      <Footer />
     </div>
   );
 }

@@ -44,7 +44,7 @@ const reviews = [
 
 const Reviews = () => {
   return (
-    <div className="md:px-24 px-6 flex flex-col md:w-[50%] w-full ">
+    <div className="md:px-24 px-6 flex text-xs sm:text-sm md:text-base lg:w-1/2 md:w-full flex-col w-full sm:w-1/2 ">
       {reviews.map((review) => (
         <div key={review.id} className="flex gap-4 md:py-3 py-4">
           <img className="w-6 h-fit" src={review.image} alt="fff" />

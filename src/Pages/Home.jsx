@@ -10,6 +10,7 @@ const Home = () => {
   // const [filter, setFilter] = useState("All");
   return (
     <div>
+      
       <Hero />
       <Trust />
       <BestSeller/>
