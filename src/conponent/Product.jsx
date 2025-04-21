@@ -9,8 +9,10 @@ import { NavLink, Outlet } from "react-router-dom";
 import { ContextProvider } from "./Context";
 import Related from "./Related";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Product = (props) => {
+  const navigate = useNavigate();
   // const [collections, setCollections] = useState({});
   const [size, setSize] = useState("");
 
@@ -19,6 +21,14 @@ const Product = (props) => {
 
     console.log(e.target.textContent, "from size");
   };
+
+  const addToCart = async() => {
+    const res = await addCart(product.id, size);
+    if(res){
+      navigate("/cart")
+    }
+    
+  }
 
   const { product } = props;
   const { addCart } = useContext(ContextProvider);
@@ -100,13 +110,9 @@ const Product = (props) => {
             <div className="flex text-sm md:text-sm">
               <div className="py-3 text-sm md:text-sm">
                 <button
-                  onClick={() =>addCart(product.id, size)}
+                  onClick={addToCart}
                   className=" bg-amber-950 text-white md:px-10 md:py-2 px-6  py-2 rounded "
-                >
-                  <NavLink className="flex gap-8 text-sm md:text-base" to="/mycart">
-                    <span className="text-sm md:text-base">Add to cart </span>
-                    <img src={cart} alt="hh" className="md:w-8 w-4 h-4 md:h-8" />
-                  </NavLink>
+                >Add To Cart
                 </button>
               </div>
              
@@ -145,3 +151,6 @@ const Product = (props) => {
 };
 
 export default Product;
+
+
+

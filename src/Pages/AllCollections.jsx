@@ -230,7 +230,7 @@ useEffect(() => {
           <div className="  text-xs sm:text-sm md:text-base px-2">
             <select
               onChange={handleSort}
-              className="border-[1px] border-black"
+              className="border rounded px-2 py-1 border-black"
               name="relevant"
               id="relevant"
             >

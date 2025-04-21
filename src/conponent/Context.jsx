@@ -6,13 +6,6 @@ import { toast } from "react-toastify";
 
 export const ContextProvider = createContext(null);
 
-// const defaultCart = () => {
-//   let carts = {};
-//   for (let index = 0; index < collections.length + 1; index++) {
-//     carts[index] = 0;
-//   }
-//   return carts;
-// };
 
 const Context = (props) => {
   const [cart, setCart] = useState({});
@@ -23,25 +16,6 @@ const Context = (props) => {
 
   console.log(cart, "fdhd");
 
-  // const addCart = (cardId) => {
-  //   setCart((prev) => ({
-  //     ...prev, [cardId]: prev[cardId] + 1 }));
-  //   alert(`${collections[cardId - 1].name} Added to cart, view cart`);
-  //   console.log(cart, "added")
-  // };
-  // setCart((prev) => {
-  //   return {
-  //     ...prev,
-  //     [cardId]: prev[cardId]
-  //       ? { ...prev[cardId], quantity: prev[cardId].quantity + 1 }
-  //       : { quantity: 1, size },
-  //   };
-  // });
-
-  // alert(`${collections[cardId - 1].name} (${size}) added to cart, view cart`);
-
-  // // Log the updated cart using useEffect
-  // console.log("Added item:", cardId, "Size:", size);
 
   const addCart = async (cardId, size) => {
     if (!size) {
@@ -115,6 +89,7 @@ const Context = (props) => {
   const contextValue = {
     collections,
     cart,
+    setCart,
     addCart,
     removeCart,
     totalCartAmount,

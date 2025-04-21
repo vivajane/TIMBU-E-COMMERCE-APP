@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const OrderSummary = () => {
   const navigate = useNavigate();
-  const { collections, cart } = useContext(ContextProvider);
+  const { collections, cart, setCart } = useContext(ContextProvider);
 
   // Calculate subtotal
   let subtotal = 0;
@@ -24,6 +24,8 @@ const OrderSummary = () => {
   const onClickHandler = (e) => {
     e.preventDefault();
     alert("Order Placed Successfully");
+    setCart({})
+    
     navigate("/");
     // Clear cart logic should go here if needed
   };

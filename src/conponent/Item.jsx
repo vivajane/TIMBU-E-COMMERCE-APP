@@ -5,13 +5,15 @@ import { NavLink } from "react-router-dom";
 
 const Item = (props) => {
   return (
-    <div className="text-center  p-0 m-0">
+    <div className="text-center p-0 m-0">
       <NavLink className="block hover:scale-110 transition ease-in-out p-0 m-0" to={`/addtocart/${props.id}`}>
-        <img 
+      <div className="overflow-hidden mt-4 rounded-lg">
+      <img 
           src={props.image}
           alt={props.name}
-          className="pt-4  h-auto  w-auto"
+          className="h-72 object-cover w-full"
         />
+      </div>
       </NavLink>
 
       <p className="pt-3 text-xs sm:text-sm md:text-base font-bold line-clamp-1">
