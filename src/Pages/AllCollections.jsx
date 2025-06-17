@@ -40,9 +40,10 @@ const AllCollections = () => {
       );
     }
 
-    
-    if(search && showSearch){
-      filterSec = filterSec.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
+    if (search && showSearch) {
+      filterSec = filterSec.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
     }
 
     if (types.length > 0) {
@@ -55,19 +56,16 @@ const AllCollections = () => {
     setSort(e.target.value);
   };
 
-
   const sortItems = () => {
     let cpAllCollections = allCollections.slice();
-    if(sort === "low"){
+    if (sort === "low") {
       setAllCollections(cpAllCollections.sort((a, b) => a.price - b.price));
-    }else if(sort === "high"){
+    } else if (sort === "high") {
       setAllCollections(cpAllCollections.sort((a, b) => b.price - a.price));
-    }else{
-      setAllCollections(cpAllCollections)
+    } else {
+      setAllCollections(cpAllCollections);
     }
-
-  }
-
+  };
 
   const showClick = () => {
     setShow((show) => !show);
@@ -76,12 +74,11 @@ const AllCollections = () => {
   useEffect(() => {
     FilterUse();
   }, [showFilter, types, search, showSearch]);
-  
 
-useEffect(() => {
+  useEffect(() => {
     sortItems();
   }, [sort]);
-  
+
   useEffect(() => {
     setAllCollections(collections);
   }, []);

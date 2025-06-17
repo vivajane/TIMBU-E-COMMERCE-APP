@@ -6,16 +6,21 @@ import { toast } from "react-toastify";
 
 export const ContextProvider = createContext(null);
 
-
 const Context = (props) => {
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : {};
+  });
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  },[cart])
 
   console.log(collections, "collections");
 
   console.log(cart, "fdhd");
-
 
   const addCart = async (cardId, size) => {
     if (!size) {
@@ -57,7 +62,7 @@ const Context = (props) => {
       return newCart;
     });
   };
-  
+
   const clearCart = (clearId) => {
     setCart((prev) => ({ ...prev, [clearId]: 0 }));
   };

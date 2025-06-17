@@ -22,6 +22,8 @@ import Collection from "./Pages/Collection";
 import AllCollections from "./Pages/AllCollections";
 import Search from "./conponent/Search";
 import { useLocation } from "react-router-dom";
+import AboutUs from "./Pages/AboutUs";
+import Contact from "./Pages/ContactUs";
 
 function App() {
   const location = useLocation();
@@ -63,6 +65,8 @@ function App() {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/mycartsub" element={<MyCartSub />}></Route>
         <Route path="/mycart" element={<MyCart />}></Route>
+        <Route path="/about" element={< AboutUs/>}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
         <Route path="/sign" element={<Login />}></Route>
         <Route path="/allcollections" element={<AllCollections />}></Route>
 

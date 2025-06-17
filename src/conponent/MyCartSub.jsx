@@ -1,10 +1,16 @@
 import { MdDelete } from "react-icons/md";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ContextProvider } from "./Context";
 
 const MyCartSub = () => {
   const { collections, cart, removeCart, addCart, clearCart } =
     useContext(ContextProvider);
+    
+
+    useEffect(() => {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }, [cart]);
+
 
   return (
     <div>
@@ -20,13 +26,13 @@ const MyCartSub = () => {
             return (
               <div
                 key={`${item.id}-${size}`}
-                className="flex justify-between items-start gap-8 md:gap-32 flex-1 md:px-3 px-2 border border-gray-400 py-6"
+                className="md:flex  md:justify-between text-sm md:text-xs md:items-start gap-8 md:gap-32 md:flex-1 md:px-3 px-2 border border-gray-400 py-6"
               >
-                <div className="flex gap-6">
+                <div className="md:flex gap-6">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="md:w-[240px] h-fit"
+                    className="w-[240px] h-fit"
                   />
                   <div>
                     <p className="font-bold text-sm md:text-base">
@@ -37,14 +43,14 @@ const MyCartSub = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-center">
+                <div className="md:flex flex-col md:items-center">
                   <div className="mb-2">
                     <MdDelete
-                      onClick={() => clearCart(item.id)}
+                      onClick={() =>{ clearCart(item.id), cart === 0 && alert("Cart is empty")}}
                       className="cursor-pointer"
                     />
                   </div>
-                  <div className="bg-gray-400 rounded flex w-fit justify-center items-center px-4 py-1 my-8">
+                  <div className="bg-gray-400 rounded flex w-fit justify-center items-center md:px-4 py-1 md:my-8">
                     <button
                       onClick={() => removeCart(item.id, size)}
                       className="px-2"

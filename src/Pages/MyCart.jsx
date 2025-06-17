@@ -12,7 +12,7 @@ const MyCart = () => {
     <div>
         <MyCartHead/>
         
-        <div className='md:flex justify-between gap-8 md:mx-24 mx-6 mt-6'>
+        <div className='lg:flex justify-between gap-8 md:mx-24 mx-6 mt-6'>
         <MyCartSub collections={collections}/>
         <MyCartSummary/>
 

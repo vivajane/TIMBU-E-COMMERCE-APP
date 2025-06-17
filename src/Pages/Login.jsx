@@ -4,8 +4,10 @@ import Button from "../conponent/Button";
 import { useState } from "react";
 import login from "../../config/login";
 import signUp from "../../config/signup";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -51,22 +53,31 @@ const Login = () => {
         console.log(response, "this is the response")
       }
       setTimeout(() => {
-        setMessage("");
-      }, 3000);
+        navigate("/");
+      }, 1000);
+      
     // return response;
     } catch (error) {
+      setMessage("Login failed. Please check your credentials.");
       console.log(error, "this is the errror")
       
     }
   }
 
   const onSubmitSignUp = async(e) => {
+    
     e.preventDefault();
     try {
       const res = await signUp(signUpData.email, signUpData.password);
-      console.log(res)
+      if(res){
+        
+        setMessage("Sign up successful");
+        return res;
+        
+      }
+      setTimeout(() => {
 
-
+      },1000)
     } catch (error) {
       console.log(error, "error from sign up")
     }
@@ -122,7 +133,7 @@ console.log("effect")
                 onChange={onChangeLogin}
               />
             </div>
-            <div  className="text-left">
+            <div className="text-left">
               <Button  >Log in</Button>
             </div>
           </form>
@@ -172,7 +183,7 @@ console.log("effect")
           </form>
 
           {/* <Button >Create an account </Button> */}
-          <button type="submit">Create an account</button>
+          <button className="border px-2 py-2 rounded-md hover:bg-black hover:text-white" type="submit">Create an account</button>
         </div>
       </div>
       <hr className="py-8" />
