@@ -24,6 +24,7 @@ import Search from "./conponent/Search";
 import { useLocation } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/ContactUs";
+import CartForm from "./conponent/CartForm";
 
 function App() {
   const location = useLocation();
@@ -65,13 +66,14 @@ function App() {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/mycartsub" element={<MyCartSub />}></Route>
         <Route path="/mycart" element={<MyCart />}></Route>
-        <Route path="/about" element={< AboutUs/>}></Route>
+        <Route path="/about" element={<AboutUs />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/sign" element={<Login />}></Route>
         <Route path="/allcollections" element={<AllCollections />}></Route>
 
-        <Route path="/ordermodal" element={OrderModal}></Route>
-        <Route path="/cartmodal" element={CartModal}></Route>
+        <Route path="/ordermodal" element={<OrderModal/>}></Route>
+        <Route path="/cartmodal" element={<CartModal/>}></Route>
+        <Route path="/cartform" element={<CartForm />}></Route>
       </Routes>
       <Footer />
     </div>

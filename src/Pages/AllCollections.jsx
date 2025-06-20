@@ -83,7 +83,7 @@ const AllCollections = () => {
     setAllCollections(collections);
   }, []);
   return (
-    <div className="flex gap-8 lg:px-16 md:px-12 relative sm:px-9 px-6 ">
+    <div className="flex gap-8 pt-11 lg:px-16 md:px-12 relative sm:px-9 px-6 ">
       <div className="space-y-6 sticky h-screen top-0 ">
         <div className="hidden sm:block gap-2 items-center">
           <h1 className="font-extrabold pt-2 flex sm:block text-xs sm:sm lg:text-2xl">

@@ -16,7 +16,7 @@ const AddToCart = () => {
   console.log(useParams())
   console.log(collections, "ggg")
   return (
-    <div>
+    <div className='pt-24'>
       {
         product ? <div>
       

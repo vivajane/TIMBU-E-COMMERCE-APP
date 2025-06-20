@@ -2,7 +2,7 @@ import { IoMdContact } from "react-icons/io";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { FaRegCreditCard } from "react-icons/fa6";
 import { useState } from "react";
-// import { SiUikit } from "react-icons/si";
+
 
 const CartForm = () => {
   const [form, setForm] = useState({
@@ -33,17 +33,17 @@ const CartForm = () => {
 
   }
   return (
-    <form action="" onSubmit={onChangeHandler}>
-      <div className="border-[1px] rounded md:w-[500px] my-4">
+    <form className="pt-24 md:px-24 px-6" action="" onSubmit={onChangeHandler}>
+      <div className="border-[1px] rounded  md:w-[500px] my-4">
         <div className="flex gap-4 pl-2">
           <IoMdContact className="mt-3" size={20} />
-          <h1 className="pt-3">CONTACT INFO</h1>
+          <h1 className="pt-3">CONTACT INFO FOR SHIPPING</h1>
         </div>
         <hr className="my-2" />
         <div className="md:flex pb-6 px-2 md:gap-4">
           <div>
             <label htmlFor="phone">
-              Your Phone Number
+              Phone Number
               <input
                 className="border-[1px] rounded py-2 md:px-4 w-full"
                 type="tel"
@@ -105,27 +105,9 @@ const CartForm = () => {
               id="addone"
             />
           </label>
-          <label htmlFor="suite">
-            Apt, Suite
-            <input
-              className="border-[1px] rounded py-2 px-1 w-full"
-              type="text"
-              name="suite"
-              id="suite"
-            />
-          </label>
+
         </div>
-        <div className="pb-6 px-2">
-          <label htmlFor="line">
-            Address line 2
-            <input
-              className="border-[1px] rounded py-2 px-2 w-full"
-              type="text"
-              name="line"
-              id="line"
-            />
-          </label>
-        </div>
+      
         <div className="md:flex pb-6 px-2 gap-6">
           <div>
             <label htmlFor="city">
@@ -162,17 +144,7 @@ const CartForm = () => {
               />
             </label>
           </div>
-          <div>
-            <label htmlFor="code">
-              Postal Code
-              <input
-                className="border-[1px] rounded py-2 px-4 w-full"
-                type="number"
-                name="code"
-                id="code"
-              />
-            </label>
-          </div>
+
         </div>
       </div>
       <div className="border-[1px] rounded md:w-[500px] my-4">
