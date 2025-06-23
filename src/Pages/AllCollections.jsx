@@ -83,8 +83,8 @@ const AllCollections = () => {
     setAllCollections(collections);
   }, []);
   return (
-    <div className="flex gap-8 pt-11 lg:px-16 md:px-12 relative sm:px-9 px-6 ">
-      <div className="space-y-6 sticky h-screen top-0 ">
+    <div className="sm:flex gap-8 pt-11 lg:px-16 md:px-12 relative sm:px-9 px-6 ">
+      <div className="space-y-6  sm:sticky sm:h-screen md:top-0 ">
         <div className="hidden sm:block gap-2 items-center">
           <h1 className="font-extrabold pt-2 flex sm:block text-xs sm:sm lg:text-2xl">
             FILTERS
@@ -141,7 +141,7 @@ const AllCollections = () => {
         </div>
         {/* small screens */}
         {show && (
-          <div className="text-[8px]">
+          <div className="flex sm:hidden gap-10 items-center justify-between sm:text-[8px]">
             <div className="border-[1px] px-3 py-2 sm:text-xs  border-gray-400">
               <h1 className="font-bold py-2">CATEGORIES</h1>
               <div className="space-y-1">
@@ -224,7 +224,7 @@ const AllCollections = () => {
               <span className="text-grays-900">Collections</span>
             </h1>
           </div>
-          <div className="  text-xs sm:text-sm md:text-base px-2">
+          <div className="flex flex-col   text-xs sm:text-sm md:text-base px-2">
             <select
               onChange={handleSort}
               className="border rounded px-2 py-1 border-black"

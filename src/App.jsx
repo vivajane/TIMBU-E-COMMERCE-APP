@@ -12,9 +12,8 @@ import Support from "./conponent/Support";
 import Cart from "./Pages/Cart";
 import MyCart from "./Pages/MyCart";
 // import OrderModal from "./conponent/OrderModal";
-import CartModal from "./conponent/CartModal";
 import AOS from "aos";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import MyCartSub from "./conponent/MyCartSub";
 import Login from "./Pages/Login";
@@ -25,8 +24,14 @@ import { useLocation } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/ContactUs";
 import CartForm from "./conponent/CartForm";
+import ConfirmAdress from "./conponent/ConfirmAdress";
+import Profile from "./Pages/Profile";
 
 function App() {
+  const [addForm, setAddForm] = useState(() => {
+    const stored = localStorage.getItem("form");
+    return stored ? JSON.parse(stored) : [];
+  });
   const location = useLocation();
   const setLocation = location.pathname.includes("allcollections");
   useEffect(() => {
@@ -71,9 +76,15 @@ function App() {
         <Route path="/sign" element={<Login />}></Route>
         <Route path="/allcollections" element={<AllCollections />}></Route>
 
-        {/* <Route path="/ordermodal" element={<OrderModal/>}></Route> */}
-        <Route path="/cartmodal" element={<CartModal/>}></Route>
-        <Route path="/cartform" element={<CartForm />}></Route>
+        <Route path="/profile" element={<Profile/>}></Route>
+        <Route
+          path="/cartform"
+          element={<CartForm setAddForm={setAddForm} addForm={addForm} />}
+        ></Route>
+        <Route
+          path="/confirmaddress"
+          element={<ConfirmAdress setAddForm={setAddForm} addForm={addForm} />}
+        ></Route>
       </Routes>
       <Footer />
     </div>

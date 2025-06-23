@@ -100,6 +100,31 @@ const Header = () => {
           <NavLink to="/about" className="py-5">
             About Us
           </NavLink>
+          <div className="flex flex-col space-y-2 gap-4 items-center">
+          <div onClick={() => setShowSearch(true)}>
+            <CiSearch />
+          </div>
+          <NavLink
+            to="/allcollections"
+            className="py-2 px-3 rounded bg-grays bg-yellow-700 text-white"
+          >
+            Collections
+          </NavLink>
+          <NavLink to="/mycart">
+          { Object.keys(cart).length > 0 && (
+             <div>
+              <IoCart  />
+              
+              {totalCartDisplay() !== 0 && (
+                <p className="font-extrabold absolute top-[40px] right-[88px]">
+                  {totalCartDisplay()}
+                </p>
+              )}
+            </div>
+          ) }
+           
+          </NavLink>
+        </div>
         </ul>
       </div>
     </header>

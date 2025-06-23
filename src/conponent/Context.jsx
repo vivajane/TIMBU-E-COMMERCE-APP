@@ -40,7 +40,7 @@ const Context = (props) => {
     }
 
     setCart(cartData);
-    alert(`${collections[cardId - 1].name} (${size}) added to cart, view cart`);
+    toast.success(`${collections[cardId - 1].name} (${size}) added to cart, view cart`);
     console.log("Added item:", cardId, "Size:", size);
   };
   useEffect(() => {
