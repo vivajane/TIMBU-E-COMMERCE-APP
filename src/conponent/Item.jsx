@@ -21,7 +21,7 @@ const Item = (props) => {
         {props.name}
       </p>
       <p className="font-bold text-xs sm:text-sm md:text-base">
-        NGN{props.price}
+      ₦{props.price}
       </p>
       <div className="flex justify-center pb-4">
         <img

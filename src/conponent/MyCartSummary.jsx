@@ -2,12 +2,70 @@ import { useContext } from "react";
 import { ContextProvider } from "./Context";
 import { useNavigate } from "react-router-dom";
 import { usePaystackPayment } from "react-paystack";
+import Paystack from "@paystack/inline-js";
+
+
+const onSuccess = (reference) => {
+  console.log("Payment successful!", reference);
+  alert("Payment success!");
+
+  // setCart({});
+  // navigate("/cartform");
+};
+
+const onClose = () => {
+  console.log("Payment closed by user");
+};
+
+const config = {
+  reference: new Date().getTime().toString(),
+  email: "obuekwekosi@gmail.com",
+  amount: 100 * 100,
+  publicKey: "pk_test_ca40184e1f89bd86794ee8792a02dba72ed940a4",
+};
 
 const MyCartSummary = () => {
+
+  // inline
+
+  const checkPaystack = () => {
+  const popup = new Paystack();
+
+  popup.newTransaction({
+    key: "pk_test_ca40184e1f89bd86794ee8792a02dba72ed940a4",
+    email: "obuekwelosi@gmail.com",
+    amount: total * 100,
+    onSuccess: (transaction) => {
+      console.log(transaction);
+      console.log("Payment successful!");
+      alert("Payment success!");
+
+      setCart({});
+      navigate("/cartform");
+    },
+    onLoad: (response) => {
+      console.log("onLoad: ", response);
+    },
+    onCancel: () => {
+      console.log("onCancel");
+    },
+    onError: (error) => {
+      console.log("Error: ", error.message);
+    },
+  });
+};
+
+
+
+
+
+
+
+
+
   const navigate = useNavigate();
   const { collections, cart, setCart } = useContext(ContextProvider);
 
-  // Calculate subtotal
   let subtotal = 0;
 
   collections.forEach((item) => {
@@ -18,36 +76,13 @@ const MyCartSummary = () => {
       });
     }
   });
-  
 
   const deliveryFee = 0;
   const total = subtotal + deliveryFee;
 
-   const config = {
-    reference: new Date().getTime().toString(),
-    email: "obuekwekosi@gmail.com", 
-    amount: total * 100, 
-    publicKey: "pk_test_ca40184e1f89bd86794ee8792a02dba72ed940a4", 
-  };
+  const initializePayment = usePaystackPayment(config);
+  if (subtotal === 0) return null;
 
-   const onSuccess = (reference) => {
-    console.log("Payment successful!", reference);
-    alert("Payment success!");
-
-    setCart({});
-    // navigate("/cartform");
-  };
-
-   const onClose = () => {
-      console.log("Payment closed by user");
-    };
-  
-    const initializePayment = usePaystackPayment(config);
-     if (subtotal === 0) return null;
-
-  
-
-  // If subtotal is 0, don't render anything
   if (subtotal === 0) return null;
   console.log("Subtotal:", subtotal, "Total:", total);
 
@@ -67,12 +102,19 @@ const MyCartSummary = () => {
         <h1>NGN {total}</h1>
       </div>
 
-      
-       
-        <button type="button" onClick={(e) =>{e.preventDefault(); console.log("Initializing payment..."); initializePayment(onSuccess, onClose)} }className="bg-black text-sm text-white px-8 rounded py-2 w-full my-3">
-          Go to Checkout
-        </button>
-      
+      <button
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          console.log("Initializing payment...");
+          // initializePayment(onSuccess, onClose);
+          checkPaystack();
+        }}
+        className="bg-black text-sm text-white px-8 rounded py-2 w-full my-3"
+      >
+        Go to Checkout
+      </button>
+
       <hr className="my-3" />
     </div>
   );

@@ -11,7 +11,7 @@ import Reviews from "./conponent/Reviews";
 import Support from "./conponent/Support";
 import Cart from "./Pages/Cart";
 import MyCart from "./Pages/MyCart";
-import OrderModal from "./conponent/OrderModal";
+// import OrderModal from "./conponent/OrderModal";
 import CartModal from "./conponent/CartModal";
 import AOS from "aos";
 import { useEffect } from "react";
@@ -71,7 +71,7 @@ function App() {
         <Route path="/sign" element={<Login />}></Route>
         <Route path="/allcollections" element={<AllCollections />}></Route>
 
-        <Route path="/ordermodal" element={<OrderModal/>}></Route>
+        {/* <Route path="/ordermodal" element={<OrderModal/>}></Route> */}
         <Route path="/cartmodal" element={<CartModal/>}></Route>
         <Route path="/cartform" element={<CartForm />}></Route>
       </Routes>

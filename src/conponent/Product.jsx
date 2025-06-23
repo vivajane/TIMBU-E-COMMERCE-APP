@@ -10,6 +10,7 @@ import { ContextProvider } from "./Context";
 import Related from "./Related";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ProductHead from "./ProductHead";
 
 const Product = (props) => {
   const navigate = useNavigate();
@@ -36,6 +37,9 @@ const Product = (props) => {
 
   return (
     <div className="md:px-24 px-6 py-6 border-t">
+      <div className="text-gray-800 pb-2">
+        <ProductHead product= {product}/>
+      </div>
       <div className="md:flex gap-12 sm:gap-12 flex-col sm:flex-row">
         {product.image && (
           <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row">
@@ -80,7 +84,7 @@ const Product = (props) => {
               </div>
             </div>
             <p className="font-extrabold md:text-sm text-sm py-1">
-              NGN{product.price}
+              ₦{product.price}
             </p>
             <p className="pt-2">Save 50% right now</p>
             <h1 className="font-extrabold pt-4 md:text-xl pb-2">Features:</h1>

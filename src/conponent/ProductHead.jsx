@@ -10,7 +10,9 @@ const ProductHead = (props) => {
         <div>
           <MdNavigateNext />
         </div>
-        <h1>{product.category}</h1>
+        <h1>
+          <NavLink to={`/addtocart/${product.category}`}>{product.category}</NavLink>
+        </h1>
         <div>
           <MdNavigateNext />
         </div>

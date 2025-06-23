@@ -6,9 +6,9 @@ const MyCartSub = () => {
   const { collections, cart, removeCart, addCart, clearCart } =
     useContext(ContextProvider);
 
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+  // useEffect(() => {
+  //   localStorage.setItem("cart", JSON.stringify(cart));
+  // }, [cart]);
 
   return (
     <div>
