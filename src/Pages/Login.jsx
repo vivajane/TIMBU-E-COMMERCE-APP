@@ -16,8 +16,7 @@ const Login = () => {
     email: "",
     password: "",
     cpassword: "",
-
-  })
+  });
   const [message, setMessage] = useState("");
 
   const onChangeLogin = (e) => {
@@ -37,58 +36,49 @@ const Login = () => {
     setSignUpData((prev) => {
       return {
         ...prev,
-        [name]: value
-      }
-    })
-    console.log(signUpData)
-  }
+        [name]: value,
+      };
+    });
+    console.log(signUpData);
+  };
 
-  const onSubmitLogin = async(e) => {
+  const onSubmitLogin = async (e) => {
     e.preventDefault();
-    // if(loginData.email === "" || loginData.password === "") 
+    // if(loginData.email === "" || loginData.password === "")
     try {
       const response = await login(loginData.email, loginData.password);
-      if(response){
-      setMessage("Login successful");
-        console.log(response, "this is the response")
+      if (response) {
+        setMessage("Login successful");
+        console.log(response, "this is the response");
       }
       setTimeout(() => {
         navigate("/");
       }, 1000);
-      
-    // return response;
+
+      // return response;
     } catch (error) {
       setMessage("Login failed. Please check your credentials.");
-      console.log(error, "this is the errror")
-      
+      console.log(error, "this is the errror");
     }
-  }
+  };
 
-  const onSubmitSignUp = async(e) => {
-    
+  const onSubmitSignUp = async (e) => {
     e.preventDefault();
     try {
       const res = await signUp(signUpData.email, signUpData.password);
-      if(res){
-        
+      if (res) {
         setMessage("Sign up successful");
         return res;
-        
       }
-      setTimeout(() => {
-
-      },1000)
+      setTimeout(() => {}, 1000);
     } catch (error) {
-      console.log(error, "error from sign up")
+      console.log(error, "error from sign up");
     }
-    
-  }
-  
-
+  };
 
   useEffect(() => {
-console.log("effect")
-  },[loginData])
+    console.log("effect");
+  }, [loginData, signUpData]);
   return (
     <div className="md:px-28 px-8 ">
       <div className="md:flex  gap-20 md:pb-48 pb-24">
@@ -100,7 +90,9 @@ console.log("effect")
             para="To use any version of Live (including Live Lite or our free trial) you need an Ableton account. It takes less than a minute to create one, and even less to log in if you already have one."
           />
           <form onSubmit={onSubmitLogin} className="max-w-xs w-full text-xs">
-          {message && <p className="text-green-500 text-sm text-center">{message}</p>}
+            {message && (
+              <p className="text-green-500 text-sm text-center">{message}</p>
+            )}
             <div className="py-6">
               <div className="py-2 font-semibold">
                 <label htmlFor="email">Email </label>
@@ -134,7 +126,7 @@ console.log("effect")
               />
             </div>
             <div className="text-left">
-              <Button  >Log in</Button>
+              <Button>Log in</Button>
             </div>
           </form>
         </div>
@@ -145,12 +137,13 @@ console.log("effect")
             semititle="New Customer? Please create an account."
             para="Your account lets you authorize and download Live plus your included library content."
           />
-          <form  onSubmit={onSubmitSignUp} className="max-w-xs w-full text-xs">
+          <form onSubmit={onSubmitSignUp} className="max-w-xs w-full text-xs">
             <div className="py-4">
               <div className="py-2 font-semibold">
                 <label htmlFor="email">Email</label>
               </div>
-              <input onChange={onChangeSignUp}
+              <input
+                onChange={onChangeSignUp}
                 className="bg-[#EEEEEE] w-full py-3"
                 type="email"
                 name="email"
@@ -162,7 +155,8 @@ console.log("effect")
               <label className="font-semibold py-2" htmlFor="password">
                 Password
               </label>
-              <input onChange={onChangeSignUp}
+              <input
+                onChange={onChangeSignUp}
                 className="bg-[#EEEEEE] w-full py-3"
                 type="password"
                 name="password"
@@ -171,19 +165,20 @@ console.log("effect")
             </div>
             <div className="py-6">
               <label className="font-semibold py-2" htmlFor="cpassword">
-               Confirm Password
+                Confirm Password
               </label>
-              <input onChange={onChangeSignUp}
+              <input
+                onChange={onChangeSignUp}
                 className="bg-[#EEEEEE] w-full py-3"
                 type="password"
                 name="cpassword"
                 id="cpassword"
               />
             </div>
+            <button className="border px-2 py-2 rounded-md hover:bg-black hover:text-white">
+              Create an account
+            </button>
           </form>
-
-          {/* <Button >Create an account </Button> */}
-          <button className="border px-2 py-2 rounded-md hover:bg-black hover:text-white" type="submit">Create an account</button>
         </div>
       </div>
       <hr className="py-8" />
@@ -198,7 +193,9 @@ export const LoginProp = ({ title, semititle, para }) => {
     <div>
       <h1 className="text-base  font-semibold pt-8 md:pt-24 pb-8">{title}</h1>
       <hr />
-      <h1 className="sm:text-xl text-sm pb-1 font-semibold pt-8">{semititle}</h1>
+      <h1 className="sm:text-xl text-sm pb-1 font-semibold pt-8">
+        {semititle}
+      </h1>
       <p className="sm:text-base  text-sm">{para}</p>
     </div>
   );
