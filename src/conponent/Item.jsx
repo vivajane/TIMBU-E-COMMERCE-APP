@@ -16,8 +16,8 @@ const Item = (props) => {
       </div>
       </NavLink>
 
-      <p className="pt-3 text-xs sm:text-sm md:text-base font-bold line-clamp-1">
-        {" "}
+      <p className="pt-6 text-xs sm:text-sm md:text-base font-bold line-clamp-1">
+        
         {props.name}
       </p>
       <p className="font-bold text-xs sm:text-sm md:text-base">

@@ -12,13 +12,13 @@ const ConfirmAdress = ({ addForm, setShowModal }) => {
      console.log(showShipping);
   }, [addForm, showShipping]);
   return (
-    <div className="bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-0 bottom-0 left-0 right-0">
-      <div className="bg-white sm:p-2 p-4 rounded-md shadow-md ">
-        <h1 className="text-2xl font-bold mb-4">Confirm Shipping details</h1>
+    <div className="bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-0 bottom-0 left-0  right-0">
+      <div className="bg-white sm:p-6 p-6 rounded-md shadow-md ">
+        <h1 className="text-lg font-bold mb-4">Confirm Shipping details</h1>
         {addForm &&
           addForm.map((item) => {
             return (
-              <div className="space-y-2" key={item.id}>
+              <div className="space-y-2 " key={item.id}>
                 <h1>
                   <span>Name: </span>
                   {item.fname} {item.lname}
@@ -54,6 +54,7 @@ const ConfirmAdress = ({ addForm, setShowModal }) => {
           <button
             onClick={() => {
               setShowShipping(true);
+              
             
              
             }}

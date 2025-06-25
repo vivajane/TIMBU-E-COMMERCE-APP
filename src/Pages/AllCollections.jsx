@@ -93,11 +93,11 @@ const AllCollections = () => {
             <FaAngleDown size={20} />
           </div>
         </div>
-        <div className="flex sm:hidden gap-2 items-center">
-          <h1 className="font-extrabold flex sm:block text-xs sm:sm lg:text-2xl">
+        <div className="flex  gap-2 items-center">
+          <h1 className="font-extrabold pt-8 flex sm:block text-xs sm:sm lg:text-2xl">
             FILTERS
           </h1>
-          <div onClick={showClick} className="sm:hidden block">
+          <div onClick={showClick} className="sm:hidden pt-8 block">
             {show ? <FaAngleUp size={20} /> : <FaAngleDown size={20} />}
           </div>
         </div>

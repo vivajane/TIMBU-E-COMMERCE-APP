@@ -5,7 +5,7 @@ const Shipped = ({setShowShipping, setShowModal}) => {
     const navigate = useNavigate()
   return (
     <div onClick={() => {setShowShipping(false) || setShowModal(true)}} className='bg-[rgba(0,0,0,0.9)] fixed flex flex-col justify-center items-center top-0 bottom-0 left-0 right-0'>
-        <div className='bg-white space-y-2 sm:p-2 p-4 rounded-md shadow-md '>
+        <div className='bg-white space-y-2 p-4  rounded-md shadow-md '>
             <h1>Order Placed Successfully</h1>
             <p>Delivery will be made in 24 hours</p>
             <div>

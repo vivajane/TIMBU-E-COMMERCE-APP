@@ -52,6 +52,7 @@ const Login = () => {
         console.log(response, "this is the response");
       }
       setTimeout(() => {
+        setMessage("");
         navigate("/");
       }, 1000);
 
@@ -64,15 +65,29 @@ const Login = () => {
 
   const onSubmitSignUp = async (e) => {
     e.preventDefault();
+     if(signUpData.password !== signUpData.cpassword){
+        setMessage("Passwords do not match");
+        setTimeout(() => setMessage(""), 1000);
+        return;
+      }
+      if(signUpData.password.length < 7){
+        setMessage("Password must be at least 7 characters");
+        setTimeout(() => setMessage(""), 1000);
+        return;
+      }
     try {
       const res = await signUp(signUpData.email, signUpData.password);
-      if (res) {
+      console.log(res);
+    
         setMessage("Sign up successful");
-        return res;
-      }
-      setTimeout(() => {}, 1000);
+        setSignUpData({ email: "", password: "", cpassword: "" });
+        setTimeout(() => setMessage(""), 1000);
+        navigate("/");
+      
     } catch (error) {
       console.log(error, "error from sign up");
+      setMessage("Sign up failed. Please check your credentials.");
+      setTimeout(() => setMessage(""), 1000);
     }
   };
 
@@ -90,8 +105,8 @@ const Login = () => {
             para="To use any version of Live (including Live Lite or our free trial) you need an Ableton account. It takes less than a minute to create one, and even less to log in if you already have one."
           />
           <form onSubmit={onSubmitLogin} className="max-w-xs w-full text-xs">
-            {message && (
-              <p className="text-green-500 text-sm text-center">{message}</p>
+              {message && (
+              <p className={`${message === "Login successful" ? "text-green-500" : "text-red-500"} pt-4`}>{message}</p>
             )}
             <div className="py-6">
               <div className="py-2 font-semibold">
@@ -138,6 +153,9 @@ const Login = () => {
             para="Your account lets you authorize and download Live plus your included library content."
           />
           <form onSubmit={onSubmitSignUp} className="max-w-xs w-full text-xs">
+             {message && (
+              <p className={`${message === "Sign up successful" ? "text-green-500" : "text-red-500"} pt-4`}>{message}</p>
+            )}
             <div className="py-4">
               <div className="py-2 font-semibold">
                 <label htmlFor="email">Email</label>
@@ -148,6 +166,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 id="emailsignup"
+                value={signUpData.email}
               />
             </div>
 
@@ -161,6 +180,7 @@ const Login = () => {
                 type="password"
                 name="password"
                 id="passwordsignup"
+                value={signUpData.password}
               />
             </div>
             <div className="py-6">
@@ -172,6 +192,7 @@ const Login = () => {
                 className="bg-[#EEEEEE] w-full py-3"
                 type="password"
                 name="cpassword"
+                value={signUpData.cpassword}
                 id="cpassword"
               />
             </div>
