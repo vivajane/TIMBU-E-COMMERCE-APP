@@ -41,7 +41,7 @@ function App() {
     AOS.init();
   }, []);
   return (
-    <div className=" w-[100%] bg-whites ">
+    <div className=" max-w-[1440px] mx-auto w-[100%] bg-whites ">
       <ToastContainer />
 
       <Header />
