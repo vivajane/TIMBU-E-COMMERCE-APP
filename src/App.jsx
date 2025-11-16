@@ -41,13 +41,14 @@ function App() {
     AOS.init();
   }, []);
   return (
-    <div className=" max-w-[1440px] mx-auto w-[100%] bg-whites ">
+    <div className="  w-[100%] bg-whites ">
       <ToastContainer />
 
       <Header />
       {setLocation && <Search />}
 
-      <Routes>
+      <div className="max-w-[1440px] mx-auto">
+        <Routes >
         <Route path="/" element={<Home />}></Route>
         <Route path="/all" element={<Category category="all" />}></Route>
         <Route
@@ -86,6 +87,7 @@ function App() {
           element={<ConfirmAdress setAddForm={setAddForm} addForm={addForm} />}
         ></Route>
       </Routes>
+      </div>
       <Footer />
     </div>
   );

@@ -42,7 +42,7 @@ const footers = [
 
 const Footer = () => {
   return (
-    <div className="md:px-24 px-6 bg-grays bg-gray-200 mt-20 py-10">
+    <div className="md:px-24 max-w-[1440px] mx-auto px-6 bg-grays bg-gray-200 mt-20 py-10">
       <NavLink to="/">
         <img src={logo} alt="logo" />
       </NavLink>

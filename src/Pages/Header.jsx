@@ -26,7 +26,7 @@ const Header = () => {
     <header className={`fixed w-full z-50 bg-white font-inter py-4 font-sans text-base font-medium justify-between pt-4 ${
       open && "overflow-hidden h-screen"
     } `}>
-      <div className="md:flex justify-between  hidden items-center md:py-2  md:px-24 px-6">
+      <div className="md:flex justify-between  max-w-[1440px] mx-auto hidden items-center md:py-2  md:px-24 px-6">
         <NavLink to="/">
           <img src={logo} alt="logo" />
         </NavLink>
@@ -47,11 +47,11 @@ const Header = () => {
           </NavLink>
           <NavLink to="/mycart">
           { Object.keys(cart).length > 0 && (
-             <div>
+             <div className="relative">
               <IoCart  />
               
               {totalCartDisplay() !== 0 && (
-                <p className="font-extrabold absolute top-[40px] right-[88px]">
+                <p className="font-extrabold absolute -top-2 -right-2 ">
                   {totalCartDisplay()}
                 </p>
               )}
@@ -71,10 +71,10 @@ const Header = () => {
             <CiSearch />
           </div>
           <NavLink to="/mycart">
-            <div>
+            <div className="relative">
               <IoCart src={cart} alt="cart" />
               {cart.length > 0 && totalCartDisplay() !== 0 && (
-                <p className="font-extrabold absolute top-[17px] right-[50px]">
+                <p className="font-extrabold absolute -top-2 -right-2 ">
                   {totalCartDisplay()}
                 </p>
               )}
@@ -112,11 +112,11 @@ const Header = () => {
           </NavLink>
           <NavLink to="/mycart">
           { Object.keys(cart).length > 0 && (
-             <div>
+             <div className="relative">
               <IoCart  />
               
               {totalCartDisplay() !== 0 && (
-                <p className="font-extrabold absolute top-[40px] right-[88px]">
+                <p className="font-extrabold   absolute -top-2 -right-2 ">
                   {totalCartDisplay()}
                 </p>
               )}
